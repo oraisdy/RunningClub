@@ -1,7 +1,7 @@
 .topNav {
   text-align: center;
   clear: both;
-  position: fixed;
+
   width: 100%;
   display: block;
   background-color: white;
@@ -29,6 +29,8 @@
   text-align: right;
   font-size: 80%;
   padding: 10px 0;
+  position: fixed;
+  top: 0;
 }
 
 #firstNav li{
@@ -40,6 +42,7 @@
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 20px 0;
+  position: fixed;
 }
 
 #secondNav li {
@@ -49,15 +52,17 @@
 .main {
   position: relative;
   top: 100px;
+  /*margin: 20px 0;*/
 }
 
 .main .left {
   width: 300px;
-  /*bottom: auto;*/
   padding: 0 40px;
-  /*float: left;*/
   position: absolute;
+  top: 0;
   bottom: auto;
+  /*float: left;*/
+  /*bottom: auto;*/
 }
 
 .main .right {
