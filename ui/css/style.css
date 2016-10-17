@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Arial,华文黑体,'Microsoft YaHei',雅黑体,SimHei,黑体,sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+hr {
+  display: block;
+  border-top: 1px solid #eee;
+  /*background-color: #eee;
+  height: 1px;*/
+  width: auto;
+  margin: 30px 0;
+  margin-right: 25%;
+}
+
+h4{
+  font-size: 120%;
+  font-family: Arial,华文黑体,'Microsoft YaHei',雅黑体,SimHei,黑体,sans-serif;
+  font-style: normal;
+}

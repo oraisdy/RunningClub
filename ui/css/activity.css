@@ -1,0 +1,40 @@
+.detail_container {
+
+}
+
+.image_presentation {
+  position: absolute;
+}
+
+.thumbnails_presentation {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.thumbnails_presentation .thumbnail {
+  width: 70px;
+  height: 70px;
+}
+
+.current_presentation {
+  width: 460px;
+  height: 460px;
+  background-color: #eee;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.current_presentation .current {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text_detail {
+
+}
+
+.participants_container {
+
+}
