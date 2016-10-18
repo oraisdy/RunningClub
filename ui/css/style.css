@@ -20,11 +20,25 @@ a {
   color: #000;
 }
 
+footer {
+  background-color: #191919;
+  color: #999;
+  font-family: "Helvetica W01 Roman",Helvetica,Arial,'Heiti SC','ST Heiti','华文黑体','Microsoft YaHei','雅黑体',SimHei,'黑体',sans-serif;
+  font-size: 0.84em;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  top: auto;
+  /*clear: both;*/
+}
+
+footer li {
+  display: inline-block;
+}
+
 hr {
   display: block;
   border-top: 1px solid #eee;
-  /*background-color: #eee;
-  height: 1px;*/
   width: auto;
   margin: 30px 0;
   margin-right: 25%;
@@ -40,6 +54,17 @@ h4{
   font-size: 120%;
   font-family: Arial,华文黑体,'Microsoft YaHei',雅黑体,SimHei,黑体,sans-serif;
   font-style: normal;
+}
+
+img.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.horizontal_divider {
+  border-left: 1px solid #eee;
+  height: auto;
+  margin: 0 30px;
 }
 
 .btn {

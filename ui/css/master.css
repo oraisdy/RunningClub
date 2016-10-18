@@ -1,12 +1,10 @@
 .topNav {
   text-align: center;
   clear: both;
-
   width: 100%;
   display: block;
   background-color: white;
   z-index: 1;
-  line-height: 1;
 }
 
 .topNav li {
@@ -43,16 +41,17 @@
   border-bottom: 1px solid #eee;
   padding: 20px 0;
   position: fixed;
+  line-height: 32px;
+  vertical-align: middle;
 }
 
 #secondNav li {
   padding: 0 40px;
+  vertical-align: middle;
 }
 
 .main {
-  position: relative;
-  top: 100px;
-
+  margin-top: 115px;
 }
 
 .main .left {

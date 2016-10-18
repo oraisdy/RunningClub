@@ -1,5 +1,5 @@
 .detail_container,.description_container, .result_container {
-  width: 942px;
+  width: 980px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -46,7 +46,7 @@
 
 .text_detail {
   display: inline-block;
-  margin-left: 80px;
+  margin-left: 120px;
   vertical-align: top;
 }
 
