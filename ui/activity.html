@@ -12,43 +12,63 @@
     <ul class="topNav" id="firstNav">
       <li class="nav-left">RUNNING CLUB+</li>
       <li class="nav-left">guide</li>
-      <li class="nav-right">contact</li>
-      <li class="nav-right">country</li>
+      <li class="nav-right">contact us</li>
+      <li class="nav-right">sign in</li>
     </ul>
     <ul class="topNav" id="secondNav">
       <li class="nav-left"><a href="#">RUNNING CLUB</a></li>
-      <li><a href="#">首页</a></li>
-      <li><a href="#">运动</a></li>
-      <li><a href="#">活动</a></li>
-      <li><a href="#">小组</a></li>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="user.html">运动</a></li>
+      <li><a href="activities.html">活动</a></li>
+      <li><a href="groups.html">小组</a></li>
     </ul>
     <div class="main">
-      <div class="detail_container">
-        <div class="image_presetation">
+      <ul class="detail_container">
+        <li class="image_presentation">
           <ul class="thumbnails_presentation">
             <li><img class="thumbnail" src="image/activity1.jpg" alt="" /></li>
             <li><img class="thumbnail" src="image/activity1.jpg" alt="" /></li>
             <li><img class="thumbnail" src="image/activity1.jpg" alt="" /></li>
           </ul>
-          <div class="current_presentation">
-            <img class="current" src="image/activity1.jpg" alt="" />
+          <div id="current_presentation">
+            <p></p>
           </div>
-        </div>
-        <div class="text_detail">
-          <h4>北京马拉松</h4>
+        </li>
+        <li class="text_detail">
           <ul>
-            <li><span>类型</span><span>线下</span></li>
-            <li><span>位置</span><span>北京</span></li>
-            <li>距离活动开始还有 15 天 1 小时 53分</li>
+            <li><h3>北京马拉松</h3></li>
+            <li><span>线下, </span><span>北京</span></li>
+            <li>距离活动开始还有<small> 15 </small>天<small> 1 </small>小时<small> 53 </small>分</li>
             <li>11-19 00:00 至 11-20 00:00</li>
-            <li><span>发起人</span><img src="image/avatar.jpg" alt="" /></li>
+            <br>
+            <li class="participants_container">
+              <div class="sponsor_img_container">
+                <img class="sponsor_img" src="image/avatar.jpg" alt="发起者" />
+              </div>
+              <div class="participant_img_container">
+                <img class="participant_img" src="image/avatar.jpg" alt="参与者" />
+                <img class="participant_img" src="image/avatar.jpg" alt="参与者" />
+                <img class="participant_img" src="image/avatar.jpg" alt="参与者" />
+                <img class="participant_img" src="image/avatar.jpg" alt="参与者" />
+                <p>由Dora发起，共4人参与了活动</p>
+              </div>
+            </li>
+            <hr style="margin-right:0;">
+            <li><div class="btn_container">
+              <a class='btn' href="#">我要报名</a>
+            </div></li>
           </ul>
-        </div>
+        </li>
+      </ul>
+      <div class="description_container">
+        <h4>活动介绍</h4>
+        <p>
+          Running Club网站是为关爱自身健康的广大人群开发的系统，开发的目标是帮助运动者们更加有目的地运动，包括活动的参加、健康情况的分析、身体状况记录。
+  通过Running Club网站的应用，期望为运动者明确运动目的，清晰了解自己的身体状况，方便地参加群体运动项目或者比赛，提高运动积极性。
+        </p>
       </div>
-      <div class="participants_container">
-        <img class="sponsor_img" src="image/avatar.jpg" alt="" />
-        <img class="participant_img" src="image/avatar.jpg" alt="" />
-        <a href="#">我要报名</a>
+      <div class="result_container">
+        <h4>参与者排名</h4>
       </div>
     </div>
   </body>

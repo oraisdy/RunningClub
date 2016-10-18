@@ -52,7 +52,7 @@
 .main {
   position: relative;
   top: 100px;
-  /*margin: 20px 0;*/
+
 }
 
 .main .left {
@@ -61,16 +61,11 @@
   position: absolute;
   top: 0;
   bottom: auto;
-  /*float: left;*/
-  /*bottom: auto;*/
 }
 
 .main .right {
-  /*left: 300px;*/
   padding: 0 40px;
-  /*clear: left;*/
   margin-left: 300px;
-  /*position: relative;*/
   min-width: 450px;
 }
 

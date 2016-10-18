@@ -1,9 +1,13 @@
-.detail_container {
-
+.detail_container,.description_container, .result_container {
+  width: 942px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .image_presentation {
-  position: absolute;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .thumbnails_presentation {
@@ -16,25 +20,72 @@
   height: 70px;
 }
 
-.current_presentation {
-  width: 460px;
-  height: 460px;
-  background-color: #eee;
-  overflow: hidden;
-  text-align: center;
-  display: inline-block;
+#current_presentation{
+  display:inline-block;
+	/*height:400px;
+  width: 400px;
+  background-color: #eee;*/
   vertical-align: top;
+	text-align:center;
 }
-
-.current_presentation .current {
-  display: inline-block;
-  vertical-align: middle;
+#current_presentation:after{
+	display:inline-block;
+	width:0;
+	height:100%;
+	vertical-align:middle;
+	content:'';
+}
+#current_presentation p{
+	display:inline-block;
+	vertical-align:middle;
+  height:400px;
+  width: 400px;
+  margin: 0;
+  background: url("../image/activity1.jpg") #eee no-repeat left center;
 }
 
 .text_detail {
-
+  display: inline-block;
+  margin-left: 80px;
+  vertical-align: top;
 }
 
-.participants_container {
+.text_detail ul {
+  text-align: center;
+}
 
+.text_detail li {
+  margin: 10px 0;
+}
+
+.participants_container .sponsor_img_container {
+  display: inline-block;
+}
+
+.participants_container .sponsor_img {
+  width: 82px;
+  height: 82px;
+}
+
+.participants_container .participant_img_container {
+  display: inline-block;
+  vertical-align: top;
+}
+.participants_container .participant_img_container p {
+  margin-top: 6px;
+  margin-left: 5px;
+  text-align: left;
+  font-size: 85%;
+}
+
+.participants_container li.btn_container {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.participants_container .participant_img {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  vertical-align: top;
 }
