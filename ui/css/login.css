@@ -1,11 +1,13 @@
 body {
-  background: url("../image/bg.jpg") white no-repeat center center;
+  background: url("../image/bg2.jpg") #191919 no-repeat center center;
+  background-size: cover;
 }
 
 .title {
   margin-top: 10%;
-  font-size: 200%;
+  font-size: 230%;
   text-align: center;
+  color: white;
 }
 
 .main {
@@ -13,24 +15,47 @@ body {
   text-align: center;
   margin: auto auto;
   vertical-align: middle;
-  border-spacing: 40px;
-
+  border-spacing: 140px;
+  /*min-height: 600px;*/
 }
 
-.left {
+.left, .right {
   display: table-cell;
-  width: 30%;
-}
-
-.right {
-  display: table-cell;
-  width: 30%;
+  width: 40%;
   vertical-align: middle;
+  min-width: 200px;
+}
+
+/*.horizontal_divider {
+  position: relative;
+}
+
+.horizontal_divider:after{
+   position: absolute;
+   top:0.1em;
+   height: calc(100% - 0.2em);
+   left:0;
+   content: '';
+   width:0;
+   border-left: solid  white 1px;
+}*/
+
+
+
+.horizontal_divider {
+  border-left: 1px solid #eee;
+  /*max-width: 1px;*/
+  /*background-color: white;*/
+  /*padding: 0;*/
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 0 auto;
+  /*margin: 0 30px;*/
 }
 
 .horizontal_divider {
   display: table-cell;
-  width: 5%;
+  width: 1%;
 }
 
 /*.right #register, .left #login {
@@ -53,6 +78,10 @@ input {
 }
 
 .btn {
-  padding: 10px 60px;
+  display: block;
+
+  border-radius: 3px;
+  height: 40px;
   width: 100%;
+  box-sizing: border-box;
 }

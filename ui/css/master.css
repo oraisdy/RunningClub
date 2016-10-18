@@ -1,6 +1,6 @@
 .topNav {
   text-align: center;
-  clear: both;
+  /*clear: both;*/
   width: 100%;
   display: block;
   background-color: white;
@@ -58,7 +58,7 @@
   width: 300px;
   padding: 0 40px;
   position: absolute;
-  top: 0;
+  top: 120px;
   bottom: auto;
 }
 
