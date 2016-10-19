@@ -27,9 +27,9 @@ footer {
   font-size: 0.84em;
   text-align: center;
   padding: 10px;
-  bottom: 0;
-  top: auto;
-  /*clear: both;*/
+  /*bottom: 0;*/
+  /*top: auto;*/
+  clear: both;
 }
 
 footer li {
@@ -69,5 +69,4 @@ img.logo {
     padding: 5px 20px;
     border: 0.8px solid #fa5400;
     border-radius: 2px;
-    /*margin: 5px 0;*/
 }

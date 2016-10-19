@@ -5,6 +5,10 @@
   display: block;
 }
 
+.detail_container {
+  padding-top: 29px;
+}
+
 .image_presentation {
   display: inline-block;
   vertical-align: top;

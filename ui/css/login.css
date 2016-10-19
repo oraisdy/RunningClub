@@ -79,9 +79,15 @@ input {
 
 .btn {
   display: block;
-
   border-radius: 3px;
   height: 40px;
   width: 100%;
   box-sizing: border-box;
+  /*margin: auto 0;*/
+  padding-top: 8px;
+}
+
+#login {
+  background-color: #191919;
+  border-color: #191919;
 }

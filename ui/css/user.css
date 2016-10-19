@@ -1,0 +1,64 @@
+.banner {
+    background: url("../image/banner.jpg") no-repeat center;
+    background-size: 100% auto;
+    height: 400px;
+    top: 115px;
+    position: relative;
+    z-index: -1;
+}
+
+.main {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.main .left {
+  margin-top: -100px;
+  margin-left: 80px;
+  /*text-align: center;*/
+  /*width: 260px !important;*/
+}
+
+.left .nickname {
+  margin-left: 50px;;
+}
+
+.main .right {
+  max-width: 700px;
+}
+
+.group-small .img_container {
+  width: 50px !important;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.group-small img {
+  height: 50px !important;
+}
+
+.group-middle {
+  margin: 20px 0 !important;
+}
+
+.group-middle .img_container {
+  width: 100px !important;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.group-middle img {
+  height: 100px !important;
+}
+
+.left .group-small {
+    display: inline-block;
+    text-align: left !important;
+    width: 230px !important;
+}
+
+.icon_line {
+  display: inline-block;
+}

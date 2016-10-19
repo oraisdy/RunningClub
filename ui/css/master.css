@@ -57,15 +57,21 @@
 .main .left {
   width: 300px;
   padding: 0 40px;
-  position: absolute;
-  top: 120px;
-  bottom: auto;
+  display: inline-block;
+  vertical-align: top;
+  /*position: absolute;*/
+  /*top: 120px;*/
+  /*bottom: auto;*/
 }
 
 .main .right {
+  /*margin-top: 120px;*/
   padding: 0 40px;
-  margin-left: 300px;
+  /*margin-left: 300px;*/
   min-width: 450px;
+  display: inline-block;
+  vertical-align: top;
+  /*padding-top: */
 }
 
 .main ul.sidenav {
@@ -89,64 +95,65 @@
   /*position: relative;*/
 }
 
-.main .right .group-big {
-  margin: 0 0 30px;
+.main .group-big {
+  margin: 0 0 50px;
 }
 
 
-.main .right .group-big h4 {
+.main .group-big h4 {
   display: block;
+  margin-top: 33px;
 }
 
-.main .right .group-big small {
+.main .group-big small {
   color: #999;
   font-size: 100%;
   margin-left: 3px;
 }
 
-.main .right .group-middle {
+.main .group-middle {
   /*width: 100%;*/
   display: block;
-  margin: 20px 0;
+  margin: 40px 25px;
 }
 
-.main .right .group-middle div {
+.main .group-middle div {
   display: inline-block;
   vertical-align:top;
 }
 
-.main .right .group-middle .text_container div {
+.main .group-middle .text_container div {
   vertical-align:middle;
 }
 
-.main .right .group-middle .text_container h4 {
+.main .group-middle .text_container h4 {
   margin: 5px 10px;
 }
 
-.main .right .group-middle .col_container {
+.main .group-middle .col_container {
   display: inline-block;
   vertical-align:middle;
   margin-top: 10px;
 }
 
-.main .right .group-middle .img_container{
+.main .group-middle .img_container{
   overflow: hidden;
   height: 100%;
-  width: 450px;
+  width: 420px;
 }
 
-.main .right .group-middle .img_container img {
+.main .group-middle .img_container img {
   height: 120px;
 }
 
-.main .right .group-middle .col_container li {
+.main .group-middle .col_container li {
   list-style: none;
   text-align: center;
   padding: 5px 0;
   margin: 0 25px;
 }
 
-.main .right .group-small {
+.main .group-small {
   display: inline-block;
   text-align: center;
   width: 230px;
@@ -154,24 +161,24 @@
   font-size: 90%;
 }
 
-.main .right .group-small .img_container{
+.main .group-small .img_container{
   overflow: hidden;
   height: 100%;
   width: 180px;
   margin: 0 auto;
 }
 
-.main .right .group-small .img_container img {
+.main .group-small .img_container img {
   height: 150px;
 }
 
-.main .right .group-small .icon_line {
+.main .group-small .icon_line {
   margin: 5px 0;
   color: #999;
   font-size: 100%;
 }
 
-.main .right .group-small .icon_line i {
+.main .group-small .icon_line i {
   margin: 0;
   padding: 0 5px;
   /*color: 0 1px 0 #ccc;*/
