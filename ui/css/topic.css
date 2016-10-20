@@ -1,0 +1,68 @@
+.main {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.topic, .reply {
+  /*border-top: 1px solid #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;*/
+  margin: 20px 0;
+}
+
+.topic {
+
+  background-color: #BDBDBD;
+}
+
+.reply {
+  background: #eee;
+}
+
+.title {
+  padding-top: 40px;
+  margin: 0 0;
+}
+
+.config-bar {
+  margin: 20px 0;
+}
+
+.config-bar .pull-right {
+  float:right;
+}
+
+.main hr {
+  margin: 5px 0;
+}
+
+
+.author, .content {
+  padding: 12px 18px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.author {
+  width: 150px;
+  text-align: center;
+}
+
+.author li {
+  margin-bottom: 5px;
+}
+
+.author .avatar_circle {
+  width: 65px;
+  height: 65px;
+}
+
+.content {
+  width: 1000px;
+}
+
+
+.content .date {
+  color: #191919;
+}

@@ -1,8 +1,36 @@
-.detail_container,.description_container, .result_container {
+.detail_container,.description_container, .result_container, .posts_container {
   width: 980px;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  margin-bottom: 50px;
+}
+
+.posts_container table {
+  width: 100%;
+  text-align: left;
+  /*background-color: #EEEEEE;*/
+}
+
+.posts_container table td,.posts_container table th {
+  border-bottom: 1px dashed #BDBDBD;
+  line-height: 28px;
+}
+
+.posts_container table .title {
+  width: 60%;
+}
+
+.posts_container table .author {
+  width: 10%;
+}
+
+.posts_container table .reply {
+  width: 10%;
+}
+
+.posts_container table .last {
+  width: 20%;
 }
 
 .detail_container {
@@ -78,7 +106,7 @@
 .participants_container .participant_img_container p {
   margin-top: 6px;
   margin-left: 5px;
-  text-align: left;
+  text-align: right;
   font-size: 85%;
 }
 

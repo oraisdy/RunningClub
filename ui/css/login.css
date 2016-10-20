@@ -26,6 +26,14 @@ body {
   min-width: 200px;
 }
 
+.middle {
+  width: 300px;
+}
+
+.left,.right,.horizontal_divider,.middle {
+  padding-bottom: 60px;
+}
+
 /*.horizontal_divider {
   position: relative;
 }

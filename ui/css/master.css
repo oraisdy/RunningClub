@@ -37,8 +37,8 @@
 
 #secondNav {
   top: 32px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;
   padding: 20px 0;
   position: fixed;
   line-height: 32px;

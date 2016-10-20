@@ -1,7 +1,7 @@
 body {
   margin: 0;
   background-color: white;
-  font-family: 华文黑体,'Microsoft YaHei',雅黑体,SimHei,黑体,sans-serif;
+  font-family: 等线,华文黑体,'Microsoft YaHei',雅黑体,SimHei,黑体,sans-serif;
   font-size: 16px;
   font-style: normal;
 }
@@ -30,6 +30,8 @@ footer {
   /*bottom: 0;*/
   /*top: auto;*/
   clear: both;
+  line-height: 250%;
+
 }
 
 footer li {
@@ -38,7 +40,7 @@ footer li {
 
 hr {
   display: block;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #BDBDBD;
   width: auto;
   margin: 30px 0;
   margin-right: 25%;
@@ -69,4 +71,12 @@ img.logo {
     padding: 5px 20px;
     border: 0.8px solid #fa5400;
     border-radius: 2px;
+}
+
+/*.avatar_circle*/
+
+img.avatar_circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
 }

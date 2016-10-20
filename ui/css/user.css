@@ -21,12 +21,12 @@
   /*width: 260px !important;*/
 }
 
-.left .nickname {
-  margin-left: 50px;;
-}
-
 .main .right {
   max-width: 700px;
+}
+
+.left .nickname {
+  margin-left: 50px;;
 }
 
 .group-small .img_container {
