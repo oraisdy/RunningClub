@@ -18,6 +18,8 @@ $URLPath = '';
 
 $Routes['GET']['/']                                                                        = 'home';
 $Routes['GET']['/index']                                                                   = 'home';
+$Routes['GET']['/login']                                                                   = 'login';
+$Routes['GET']['/register']                                                                = 'register';
 $Routes['GET']['/activities']                                                              = 'activities';
 $Routes['GET']['/groups']                                                                  = 'groups';
 $Routes['GET']['/activity']                                                                = 'activity';
