@@ -19,16 +19,13 @@ class DB {
     private function Init($query, $parameters = "") {
         try {
             $this->sQuery     = $this->file_db->prepare($query);
-            echo $query.'<br>';
             if (!empty($parameters)) {
                 if (array_key_exists(0, $parameters)) {     //序号型
                     $parametersType = true;
-                    echo "true";
                 } else {
                     $parametersType = false;
                 }
                 foreach ($parameters as $column => $value) {
-                    echo ($parametersType ? $column+1 : ":" . $column)." ".$parameters[$column].'<br>';
                     $this->sQuery->bindParam($parametersType ? $column+1 : ":" . $column, $parameters[$column]);
                 }
             }

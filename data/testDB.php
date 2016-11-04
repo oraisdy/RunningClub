@@ -14,9 +14,12 @@
 //    $PostsArray = $db->query('select * from user WHERE id=? and login=?;',array("1","123"));
 //    $PostsArray = $db->query('select * from user WHERE id=:id and login=:login;',array("id"=>"1","login"=>"123"));
 
-//    foreach ($PostsArray as $item) {
-//        echo $item['id'].'<br>'.$item['description'];
-//    }
+
 
 $PostsArray = $db->query('insert into user(login,password,email,joinAt) values(?,?,?,?);',
-    array("test2","test","54638494","1327214268"));
+    array("test3","test","546338494","1327214268"));
+
+echo $PostsArray;
+    foreach ($PostsArray as $item) {
+        echo $item;
+    }
