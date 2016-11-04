@@ -26,6 +26,7 @@ class DB {
                         $parametersType = false;
                     }
                     foreach ($parameters as $column => $value) {
+                        echo $parametersType ? $column+1 : ":" . $column." ". $parameters[$column].'<br>';
                         $this->sQuery->bindParam($parametersType ? $column+1 : ":" . $column, $parameters[$column]);
                     }
                 }

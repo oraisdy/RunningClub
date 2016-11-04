@@ -1,7 +1,8 @@
 <?php
 
-include("/view/common/header.html");
+$ID   = intval($_GET['id']);
+$SelectResult = $DB->query('select * from event where id = :id;',array('id'=>$ID));
+if(!empty($SelectResult))
+    $Activity = $SelectResult[0];
 
-include("/view/activity.html");
-
-include("/view/common/footer.html");
+include("/view/activity.php");
