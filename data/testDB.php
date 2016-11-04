@@ -16,7 +16,7 @@
 
 
 
-$PostsArray = $db->query('insert into user(login,password,email,joinAt) values(?,?,?,?);',
+$PostsArray = $db->query('insert into `user`(login,password,email,joinAt) values(?,?,?,?);',
     array("test3","test","546338494","1327214268"));
 
 echo $PostsArray;

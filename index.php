@@ -27,19 +27,15 @@ $Routes['GET']['/group']                                                        
 $Routes['GET']['/user']                                                                    = 'user';
 $Routes['GET']['/topic']                                                                   = 'topic';
 
+$Routes['POST']['/register']                                                               = 'register';
+
 foreach ($Routes as $Method => $SubRoutes) {
     if ($Method === $HTTPMethod) {
         $ParametersVariableName = '_' . $Method;
         foreach ($SubRoutes as $URL => $Controller) {
-//            echo '<br> <br> <br> <br><br> <br> <br> <br>';
-//            echo $URL." ".$ShortRequestURI."<br>";
-//            echo strpos($ShortRequestURI, $URL).'<br>';
             if (preg_match("#^" . $URL . "$#i", $ShortRequestURI, $Parameters)) {
-//            if (strpos($ShortRequestURI, $URL)!==false) {
-//                echo $URL;
                 $NotFound = false;
                 $Parameters = array_merge($Parameters, $HTTPParameters);
-                //var_dump($Parameters);
                 foreach ($Parameters as $Key => $Value) {
                     if (!is_int($Key)) {
                         ${$ParametersVariableName}[$Key] = urldecode($Value);
@@ -53,5 +49,6 @@ foreach ($Routes as $Method => $SubRoutes) {
         break;
     }
 }
+
 
 require(__DIR__ . '/controller/' . $UrlPath . '.php');

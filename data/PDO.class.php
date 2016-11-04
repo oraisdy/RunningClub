@@ -12,28 +12,34 @@ class DB {
     public $queryCount = 0;
 
     public function __construct() {
-        $this->file_db = new PDO('sqlite:../rnclub.db');
+        $this->file_db = new PDO('sqlite:rnclub.db');
     }
 
 
     private function Init($query, $parameters = "") {
         try {
-            $this->sQuery     = $this->file_db->prepare($query);
-            if (!empty($parameters)) {
-                if (array_key_exists(0, $parameters)) {     //序号型
-                    $parametersType = true;
-                } else {
-                    $parametersType = false;
+            if($this->sQuery     = $this->file_db->prepare($query)){
+                if (!empty($parameters)) {
+                    if (array_key_exists(0, $parameters)) {     //序号型
+                        $parametersType = true;
+                    } else {
+                        $parametersType = false;
+                    }
+                    foreach ($parameters as $column => $value) {
+                        $this->sQuery->bindParam($parametersType ? $column+1 : ":" . $column, $parameters[$column]);
+                    }
                 }
-                foreach ($parameters as $column => $value) {
-                    $this->sQuery->bindParam($parametersType ? $column+1 : ":" . $column, $parameters[$column]);
-                }
+                $this->sQuery->execute();
+                $this->queryCount++;
+            } else {
+                printf("Errormessage:\n");
+                foreach($this->file_db->errorInfo() as $line)
+                    printf("%s\n",$line);
             }
 
-            $this->sQuery->execute();
-            $this->queryCount++;
-        }
-        catch (PDOException $e) {
+
+
+        } catch (PDOException $e) {
             die();
         }
     }
