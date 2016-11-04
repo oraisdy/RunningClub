@@ -44,19 +44,6 @@ footer {
   padding-bottom: 60px;
 }
 
-/*.horizontal_divider {
-  position: relative;
-}
-
-.horizontal_divider:after{
-   position: absolute;
-   top:0.1em;
-   height: calc(100% - 0.2em);
-   left:0;
-   content: '';
-   width:0;
-   border-left: solid  white 1px;
-}*/
 
 
 

@@ -185,3 +185,60 @@
   /*text-shadow: #eeeeee;*/
     /*border: 1px solid #ccc;*/
 }
+
+.group-big .form_container {
+  width:850px;
+
+}
+
+.group-big .form_container form {
+  width: 650px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.group-big form label {
+  /*vertical-align: top;*/
+  margin-right:  20px;
+}
+
+.group-big form div {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width:100%;
+  display: block;
+  text-align: left;
+}
+
+
+.group-big form input.field, .group-big form textarea {
+  border: 1px solid #E5E5E5;
+  border-radius: 3px;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 0 16px;
+
+}
+
+.group-big form input.checkbox {
+  width:20px;;
+  padding: 0 16px;
+  margin: 0 10px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.group-big form input.field {
+  height: 36px;
+  vertical-align: middle;
+}
+
+.group-big form textarea {
+  height: 100px;
+  vertical-align: top;
+}
+
+.group-big form .btn {
+  width: 100px;
+  margin-left: 180px;
+}

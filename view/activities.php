@@ -20,28 +20,22 @@
           <li><a href="#">我参与的活动</a></li>
           <li><a href="#">进行中的活动</a></li>
           <li><a href="#">结束的活动</a></li>
+          <li><a href="/activity/new">创建活动</a></li>
         </ul>
       </div>
       <div class="right">
-        <!-- <div class="group-big"> -->
-          <!-- <div class="imagebar"> -->
-            <!-- <img src="image/bar.png" alt="" style="height:230px;width:100%"/> -->
-            <!-- </div> -->
-        <!-- </div> -->
-        <!-- group big start -->
         <div class="group-big">
           <h4>我参与的活动<small>(2)</small></h4>
-
           <?php
             foreach($Activities as $activity){
           ?>
               <!-- middle group start -->
               <div class="group-middle">
                 <div class="img_container">
-                  <a href="#"><img src="../static/image/activity1.jpg" alt="" /></a>
+                  <a href="/a/<?php echo $activity['id']?>"><img src="../static/image/activity1.jpg" alt="" /></a>
                 </div>
                 <div class="text_container">
-                  <a href="/activity/<?php echo $activity['id']?>"><h4><?php echo $activity['title']?></h4></a>
+                  <a href="/a/<?php echo $activity['id']?>"><h4><?php echo $activity['title']?></h4></a>
                   <div class="col_container">
                     <li><i class="fa fa-hashtag fa-border" aria-hidden="true"></i></li>
                     <li><?php echo $activity['type']?></li>
@@ -58,9 +52,6 @@
                     <li><i class="fa fa-calendar fa-border" aria-hidden="true"></i></li>
                     <li>15 天 1 小时 53分</li>
                   </div>
-                  <!-- <div class="col_container">
-                    <li><a href="#">报名参加</a></li>
-                  </div> -->
                 </div>
               </div>
               <!-- middle group end -->
