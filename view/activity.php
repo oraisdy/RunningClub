@@ -44,7 +44,7 @@
             </li>
             <hr style="margin-right:0;">
             <li><div class="btn_container">
-              <a class='btn' href="#" onclick="buttonSubmit(this, '报名成功');">我要报名</a>
+              <a class='btn' href="#" onclick="buttonSubmit(this, '/activity/join', '报名成功');">我要报名</a>
             </div>
               <div class="btn_container">
                 <a class='btn' href="#" onclick="buttonSubmit(this, '报名成功');">邀请好友</a>

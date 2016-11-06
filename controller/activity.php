@@ -15,7 +15,8 @@ $Participates = $DB -> query('select * from user where id in(?) limit 4;',$Parti
 
 //join activity
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+    echo 122;
+    echo $CurUserID;
 }
 
 include("/view/activity.php");

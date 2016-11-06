@@ -15,6 +15,7 @@ include('/config/config.php');
 require("/data/PDO.class.php");
 $DB = new DB();
 
+$CurUserID             = intval(GetCookie('UserID'));
 
 //批量设置Cookie
 function SetCookies($CookiesArray, $Expires = 0)
@@ -22,8 +23,27 @@ function SetCookies($CookiesArray, $Expires = 0)
     global $TimeStamp, $Config;
     foreach ($CookiesArray as $key => $value) {
         if (!$Expires)
-            setcookie($Config['CookiePrefix'] . $key, $value, 0, $Config['WebsitePath'] . '/', null, false, true);
+            setcookie( $key, $value, 0, '/', null, false, true);
         else
-            setcookie($Config['CookiePrefix'] . $key, $value, $TimeStamp + 86400 * $Expires, $Config['WebsitePath'] . '/', null, false, true);
+            setcookie( $key, $value, $TimeStamp + 86400 * $Expires, '/', null, false, true);
     }
+}
+
+//获取Cookie
+function GetCookie($Key, $DefaultValue = false)
+{
+    global $Config, $IsApp;
+    if (!$IsApp) {
+        if (!empty($_COOKIE[$Key])) {
+            return $_COOKIE[$Key];
+        } else if ($DefaultValue) {
+            SetCookies(array(
+                $Key => $DefaultValue
+            ));
+            return $DefaultValue;
+        }
+    } else {
+        return Request("Request", "Auth" . $Key, $DefaultValue);
+    }
+    return false;
 }
