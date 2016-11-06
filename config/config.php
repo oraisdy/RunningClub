@@ -11,3 +11,5 @@ define('DBPort', '3306');
 define('DBName', 'forum');
 define('DBUser', 'root');
 define('DBPassword', '2a617');
+
+define('LanguagePath', '/language/zh-cn/');

@@ -31,6 +31,7 @@ $Routes['GET']['/user']                                                         
 $Routes['GET']['/activity/new']                                                              = 'newActivity';
 $Routes['GET']['/group/new']                                                                  = 'newGroup';
 
+$Routes['POST']['/login']                                                               = 'login';
 $Routes['POST']['/register']                                                               = 'register';
 $Routes['POST']['/message']                                                               = 'message';
 $Routes['POST']['/activity/new']                                                              = 'newActivity';

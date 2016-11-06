@@ -26,7 +26,7 @@ class DB {
                         $parametersType = false;
                     }
                     foreach ($parameters as $column => $value) {
-                        echo $parametersType ? $column+1 : ":" . $column." ". $parameters[$column].'<br>';
+//                        echo $parametersType ? $column+1 : ":" . $column." ". $parameters[$column].'<br>';
                         $this->sQuery->bindParam($parametersType ? $column+1 : ":" . $column, $parameters[$column]);
                     }
                 }
@@ -58,5 +58,15 @@ class DB {
         } else {
             return NULL;
         }
+    }
+
+    public function row($query, $params = null, $fetchmode = PDO::FETCH_ASSOC)
+    {
+        $this->Init($query, $params);
+        $resultRow = $this->sQuery->fetch($fetchmode);
+        //$this->rowCount = $this->sQuery->rowCount();
+        //$this->columnCount = $this->sQuery->columnCount();
+        $this->sQuery->closeCursor();
+        return $resultRow;
     }
 }
