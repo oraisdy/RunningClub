@@ -32,6 +32,9 @@ $Routes['GET']['/activity/new']                                                 
 $Routes['GET']['/group/new']                                                                  = 'newGroup';
 
 $Routes['POST']['/register']                                                               = 'register';
+$Routes['POST']['/message']                                                               = 'message';
+$Routes['POST']['/activity/new']                                                              = 'newActivity';
+$Routes['POST']['/activity/join']                                                              = 'activity';
 
 foreach ($Routes as $Method => $SubRoutes) {
     if ($Method === $HTTPMethod) {

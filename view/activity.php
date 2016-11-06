@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="/static/css/activity.css" media="screen" title="no title">
+    <script type="application/javascript" src="../static/js/submit.function.js"></script>
   </head>
   <body>
     <?php include("/view/common/header.html");?>
@@ -38,13 +39,16 @@
                 <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
                 <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
                 <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
-                <p>由Dora发起，共4人参与了活动</p>
+                <p>由<?php echo $Sponsor['login']?>发起，<?php echo $ParticipatesCount?>人参与了活动，<a href="#rank">查看全部</a></p>
               </div>
             </li>
             <hr style="margin-right:0;">
             <li><div class="btn_container">
-              <a class='btn' href="#">我要报名</a>
-            </div></li>
+              <a class='btn' href="#" onclick="buttonSubmit(this, '报名成功');">我要报名</a>
+            </div>
+              <div class="btn_container">
+                <a class='btn' href="#" onclick="buttonSubmit(this, '报名成功');">邀请好友</a>
+              </div></li>
           </ul>
         </li>
       </ul>
@@ -52,10 +56,12 @@
         <h4>活动介绍</h4>
         <p><?php echo $Activity['description']?></p>
       </div>
-      <div class="result_container">
+      <div class="result_container" id="rank">
         <h4>参与者排名</h4>
       </div>
     </section>
     <?php include("/view/common/footer.html");?>
+  
+
   </body>
 </html>

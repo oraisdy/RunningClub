@@ -110,9 +110,14 @@
   font-size: 85%;
 }
 
-.participants_container li.btn_container {
-  margin: 30px auto;
-  text-align: center;
+/*.participants_container li.btn_container {*/
+  /*margin: 30px auto;*/
+  /*text-align: center;*/
+/*}*/
+
+li .btn_container {
+  display: inline-block;
+  margin: 0 18px;
 }
 
 .participants_container .participant_img {
