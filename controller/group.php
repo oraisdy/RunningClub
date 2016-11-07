@@ -1,6 +1,6 @@
 <?php
 
-include("/view/common/header.html");
+include("/view/common/header.php");
 
 include("/view/group.html");
 

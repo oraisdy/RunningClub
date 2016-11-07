@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../static/css/activities.css" media="screen" title="no title">
   </head>
   <body>
-    <?php include("/view/common/header.html");?>
+    <?php include("/view/common/header.php");?>
     <div class="main">
       <div class="banner">
       </div>

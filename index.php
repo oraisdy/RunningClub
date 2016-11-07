@@ -21,6 +21,7 @@ $URLPath = '';
 $Routes['GET']['/']                                                                        = 'home';
 $Routes['GET']['/index']                                                                   = 'home';
 $Routes['GET']['/login']                                                                   = 'login';
+$Routes['GET']['/logout']                                                                   = 'logout';
 $Routes['GET']['/register']                                                                = 'register';
 $Routes['GET']['/activities']                                                              = 'activities';
 $Routes['GET']['/groups']                                                                  = 'groups';
@@ -57,6 +58,5 @@ foreach ($Routes as $Method => $SubRoutes) {
         break;
     }
 }
-
 
 require(__DIR__ . '/controller/' . $UrlPath . '.php');

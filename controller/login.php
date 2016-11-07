@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             SetCookies(array(
                 'UserID' => $DBUser['id'],
+                'UserName' => $DBUser['login'],
                 'UserExpirationTime' => $TemporaryUserExpirationTime,
 //                'UserCode' => md5($DBUser['password'] . $DBUser['Salt'] . $TemporaryUserExpirationTime . SALT)
             ), $Expires);
@@ -67,6 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //            } else {
 //                Redirect('', 'logined');
 //            }
+
+        header('location:/');
 
     }while(false);
 }

@@ -6,6 +6,7 @@
  * Time: 13:48
  */
 
+date_default_timezone_set('PRC');
 $TimeStamp = $_SERVER['REQUEST_TIME'];
 
 //读入config
@@ -16,6 +17,7 @@ require("/data/PDO.class.php");
 $DB = new DB();
 
 $CurUserID             = intval(GetCookie('UserID'));
+$CurUserName             = intval(GetCookie('UserName'));
 
 //批量设置Cookie
 function SetCookies($CookiesArray, $Expires = 0)

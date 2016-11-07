@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="/static/css/activity.css" media="screen" title="no title">
-    <script type="application/javascript" src="../static/js/submit.function.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/submit.function.js"></script>
+    <script type="text/javascript">var id = <?php echo $Activity['id']?>;</script>
   </head>
   <body>
-    <?php include("/view/common/header.html");?>
+    <?php include("/view/common/header.php");?>
     <section class="main">
       <ul class="detail_container">
         <li class="image_presentation">

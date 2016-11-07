@@ -1,7 +1,7 @@
 <?php
 
 
-include("/view/common/header.html");
+include("/view/common/header.php");
 
 include("/view/user.html");
 
