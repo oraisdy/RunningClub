@@ -25,10 +25,10 @@ $Routes['GET']['/logout']                                                       
 $Routes['GET']['/register']                                                                = 'register';
 $Routes['GET']['/activities']                                                              = 'activities';
 $Routes['GET']['/groups']                                                                  = 'groups';
-$Routes['GET']['/a/(?<id>[0-9]+)']                                                  = 'activity';
+$Routes['GET']['/a/(?<id>[0-9]+)']                                                          = 'activity';
 $Routes['GET']['/g/(?<id>[0-9]+)']                                                         = 'group';
 $Routes['GET']['/t/(?<id>[0-9]+)']                                                         = 'topic';
-$Routes['GET']['/user']                                                                    = 'user';
+$Routes['GET']['/u/(?<id>[0-9]+)']                                                          = 'user';
 $Routes['GET']['/activity/new']                                                              = 'newActivity';
 $Routes['GET']['/group/new']                                                                  = 'newGroup';
 

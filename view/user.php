@@ -9,21 +9,21 @@
     <link rel="stylesheet" href="../static/css/user.css" media="screen" title="no title">
   </head>
   <body>
+    <?php include("common/header.php"); ?>
     <div class="banner">
     </div>
     <div class="main">
-
       <div class="left">
         <img class="avatar" src="../static/image/avatar.jpg" alt="" style="width:200px; height:200px"/>
-        <h4 class="nickname">Taylor Hill</h4>
+        <h4 class="nickname"><?php echo $User['login'];?></h4>
         <p>
-          已运动 32 天
+          已运动 <?php echo $Record['days'];?> 天
         </p>
         <p>
-          累计里程 99 km
+          累计里程 <?php echo $Record['distances'];?> km
         </p>
         <p>
-          共燃烧 100000 大卡
+          共燃烧 <?php echo $Record['calories'];?> 大卡
         </p>
         <!-- group big start -->
         <div class="group-big">
@@ -59,20 +59,23 @@
         <!-- group big start -->
         <div class="group-big">
           <h4>我参与的活动<small>(2)</small></h4>
+          <?php
+          foreach($Activities as $activity){
+          ?>
           <!-- middle group start -->
           <div class="group-middle">
             <div class="img_container">
               <a href="#"><img src="../static/image/activity1.jpg" alt="" /></a>
             </div>
             <div class="text_container">
-              <a href="#"><h4>北京马拉松</h4></a>
+              <a href="#"><h4><?php echo $activity['title']?></h4></a>
               <div class="col_container">
                 <li><i class="fa fa-hashtag fa-border" aria-hidden="true"></i></li>
-                <li>线下</li>
+                <li><?php echo $activity['type']?></li>
               </div>
               <div class="col_container">
                 <li><i class="fa fa-location-arrow fa-border" aria-hidden="true"></i></li>
-                <li>北京</li>
+                <li><?php echo $activity['location']?></li>
               </div>
               <div class="col_container">
                 <li><i class="fa fa-users fa-border" aria-hidden="true"></i></li>
@@ -85,35 +88,11 @@
             </div>
           </div>
           <!-- middle group end -->
-          <!-- middle group start -->
-          <div class="group-middle">
-            <div class="img_container">
-              <a href="#"><img src="../static/image/activity2.jpg" alt="" /></a>
-            </div>
-            <div class="text_container">
-              <a href="#"><h4>城市夜跑</h4></a>
-              <div class="col_container">
-                <li><i class="fa fa-hashtag fa-border" aria-hidden="true"></i></li>
-                <li>线下</li>
-              </div>
-              <div class="col_container">
-                <li><i class="fa fa-location-arrow fa-border" aria-hidden="true"></i></li>
-                <li>南京</li>
-              </div>
-              <div class="col_container">
-                <li><i class="fa fa-users fa-border" aria-hidden="true"></i></li>
-                <li>3 人</li>
-              </div>
-              <div class="col_container">
-                <li><i class="fa fa-calendar fa-border" aria-hidden="true"></i></li>
-                <li>15 天 1 小时 53分</li>
-              </div>
-            </div>
-          </div>
-          <!-- middle group end -->
+          <?php } ?>
         </div><!-- big group end -->
       </div>
     </div>
     </div>
+    <?php include("common/footer.html"); ?>
   </body>
 </html>
