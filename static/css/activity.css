@@ -102,6 +102,7 @@
 .participants_container .participant_img_container {
   display: inline-block;
   vertical-align: top;
+  text-align: left;
 }
 .participants_container .participant_img_container p {
   margin-top: 6px;

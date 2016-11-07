@@ -20,10 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     if(!empty($SponsorResult))
         $Sponsor = $SponsorResult[0];
 
-    $ParticipateResult = $DB -> query('select * from event_participant WHERE eventId=:id',array('id'=>$Activity['id']));
+    $ParticipateResult = $DB -> column('select userId from event_participant WHERE eventId=:id',array('id'=>$Activity['id']));
     $ParticipatesCount = count($ParticipateResult);
     $Participates = $DB -> query('select * from user where id in(?) limit 4;',$ParticipateResult);
-
 
 }
 

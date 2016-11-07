@@ -34,13 +34,13 @@
             <br>
             <li class="participants_container">
               <div class="sponsor_img_container">
-                <img class="sponsor_img" src="/static/image/avatar.jpg" alt="发起者" />
+                <img class="sponsor_img" src="/static/image/avatar.jpg" alt="发起者" title="<?php echo $Sponsor['login'] ?>"/>
               </div>
               <div class="participant_img_container">
-                <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" />
+                <?php foreach ($Participates as $user){  ?>
+                  <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" title="<?php echo $user['login'] ?>" />
+                <?php } ?>
+
                 <p>由<?php echo $Sponsor['login']?>发起，<?php echo $ParticipatesCount?>人参与了活动，<a href="#rank">查看全部</a></p>
               </div>
             </li>

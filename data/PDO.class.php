@@ -45,6 +45,19 @@ class DB {
         }
     }
 
+    private function BuildParams($query, $params = null)
+    {
+        if (!empty($params)) {
+            $rawStatement = explode(" ", $query);
+            foreach ($rawStatement as $value) {
+                if (strtolower($value) == 'in') {
+                    return str_replace("(?)", "(" . implode(",", array_fill(0, count($params), "?")) . ")", $query);
+                }
+            }
+        }
+        return $query;
+    }
+
     public function query($query, $params = null, $fetchmode = PDO::FETCH_ASSOC)
     {
         $query        = trim($query);
@@ -58,6 +71,16 @@ class DB {
         } else {
             return NULL;
         }
+    }
+
+    public function column($query, $params = null)
+    {
+        $this->Init($query, $params);
+        $resultColumn = $this->sQuery->fetchAll(PDO::FETCH_COLUMN);
+        //$this->rowCount = $this->sQuery->rowCount();
+        //$this->columnCount = $this->sQuery->columnCount();
+        $this->sQuery->closeCursor();
+        return $resultColumn;
     }
 
     public function row($query, $params = null, $fetchmode = PDO::FETCH_ASSOC)
