@@ -6,20 +6,30 @@
  * Time: 22:41
  */
 
+include LanguagePath.'/newActivity.php';
+
 $State="创  建";
 if($_SERVER['REQUEST_METHOD']=='POST') {
-    $DB -> query('insert into event(title,type,location,description,startAt,endAt,sponsorId) VALUES(?,?,?,?,?,?,?) ', array(
+    $State="发布中";
+    $EventId = $DB -> save('insert into event(title,type,location,description,startAt,endAt,sponsorId) VALUES(?,?,?,?,?,?,?);
+        ', array(
         $_POST['title'],
         $_POST['type'],
         $_POST['location'],
         $_POST['description'],
-        $_POST['daterange']['startDate'],
-        $_POST['daterange']['endDate'],
+        explode($Lang['Separator'], $_POST['daterange'])[0],
+        explode($Lang['Separator'], $_POST['daterange'])[1],
         $CurUserID
     ));
-    echo "<br><br><br><br><br><br><br><br><br>".$_POST['description'];
-    $State="发布成功";
-    header('location:/activities/my');
+
+    if($_POST['ifJoin'])
+        $JoinResult = $DB -> query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)',array(
+            $CurUserID,
+            $EventId,
+            $CurDate,
+        ));
+
+
 }
 
 include("/view/newActivity.php");

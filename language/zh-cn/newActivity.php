@@ -10,6 +10,6 @@ if (empty($Lang) || !is_array($Lang))
     $Lang = array();
 
 $Lang = array_merge($Lang, array(
-
+    'Separator' => " 到 ",
 
 ));

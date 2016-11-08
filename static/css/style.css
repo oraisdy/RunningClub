@@ -85,3 +85,8 @@ img.avatar_circle {
   height: 85px;
   border-radius: 50%;
 }
+
+.range_inputs .btn {
+  width:150px;
+  padding: 5px 20px;
+}

@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/library/bootstrap.css" />
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/library/daterangepicker.css" />
+
     <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/activities.css" media="screen" title="no title">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!-- Include Required Prerequisites -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
 
-    <!-- Include Date Range Picker -->
-    <script type="text/javascript" src="../static/js/library/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-
-    <script src="../static/js/submit.function.js"></script>
   </head>
   <body>
     <?php include("/view/common/header.php");?>
@@ -43,13 +43,10 @@
               <div><label>活动类型：</label>线上<input type="radio" checked="checked" name="type" value="线上" />
                 线下<input type="radio" name="type" value="线下" ></div>
               <div><label>活动地点：</label><input class="field" type="text" name="location" value="" placeholder=""></div>
-<!--              <div>开始于<input class="date_picker field" style="width: 150px;margin:0 30px" type="text" name="startAt" value="" />-->
-<!--                  结束于<input class="date_picker field" style="width: 150px;margin:0 30px" name="endAt" value="" ></div>-->
               <div><label>活动时间：</label><input class="field" type="text" name="daterange"/></div>
-
               <div><label>活动描述：</label><textarea type="text" name="description" value="" placeholder=""></textarea></div>
               <div style="margin-left: 150px;"><input class="checkbox" checked type="checkbox" name="ifJoin">同时加入活动</div>
-              <input type="submit" class="btn" value="<?php echo $State?>">
+              <input type="submit" class="btn" onclick="submit(this,'/activity/new');" value="发  布">
 <!--              <input type="submit" class="btn" value="创  建" onclick="buttonSubmit(this,'/activity/new','创建成功');">-->
             </form>
           </div>
@@ -65,13 +62,34 @@
           timePickerIncrement: 30,
           locale: {
             format: 'YYYY-MM-DD H:mm',
-            separator: ' 到 ',
+            separator: '<?php echo $Lang['Separator'];?>',
+            applyLabel:"确定",
+            cancelLabel:"取消",
           },
-          startDate: '<?php echo date('YYYY-MM-DD H:mm',$TimeStamp);?>',
-          endDate: '<?php echo date('YYYY-MM-DD H:mm',$TimeStamp);?>',
+          startDate: '<?php echo $CurDate;?>',
+          endDate: '<?php echo $CurDate;?>',
         });
       });
 
+      function submit(btn, url) {
+        console.log(url);
+        btn.innerHTML = "发布中";
+        btn.style.backgroundColor = '#676767';
+        btn.style.borderColor = '#676767';
+        $.ajax({
+          url: url,
+          type: "POST",
+          success: function (data) {
+            btn.innerHTML ="发布成功";
+            location.href = '/activities/my';
+          },
+          error : function (msg,meg) {
+            console.log(msg);
+            console.log(meg)
+          }
+        });
+
+      }
 
     </script>
   </body>

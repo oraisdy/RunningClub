@@ -8,6 +8,7 @@
 
 date_default_timezone_set('PRC');
 $TimeStamp = $_SERVER['REQUEST_TIME'];
+$CurDate = date('Y-m-d H:i:s', $TimeStamp);
 
 //读入config
 include('/config/config.php');

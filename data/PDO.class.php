@@ -58,8 +58,13 @@ class DB {
         return $query;
     }
 
-    public function query($query, $params = null, $fetchmode = PDO::FETCH_ASSOC)
-    {
+    public function save($query, $params = null, $fetchmode = PDO::FETCH_ASSOC) {
+        $query        = trim($query);
+        $this->Init($query, $params);
+        return $this->file_db->lastInsertId();
+    }
+
+    public function query($query, $params = null, $fetchmode = PDO::FETCH_ASSOC) {
         $query        = trim($query);
         $rawStatement = explode(" ", $query);
         $this->Init($query, $params);
@@ -87,8 +92,6 @@ class DB {
     {
         $this->Init($query, $params);
         $resultRow = $this->sQuery->fetch($fetchmode);
-        //$this->rowCount = $this->sQuery->rowCount();
-        //$this->columnCount = $this->sQuery->columnCount();
         $this->sQuery->closeCursor();
         return $resultRow;
     }
