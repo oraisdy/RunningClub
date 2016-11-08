@@ -29,7 +29,7 @@ $Routes['GET']['/a/(?<id>[0-9]+)']                                              
 $Routes['GET']['/g/(?<id>[0-9]+)']                                                         = 'group';
 $Routes['GET']['/t/(?<id>[0-9]+)']                                                         = 'topic';
 $Routes['GET']['/u/(?<id>[0-9]+)']                                                          = 'user';
-$Routes['GET']['/activity/new']                                                              = 'newActivity';
+$Routes['GET']['/activities/new']                                                              = 'newActivity';
 $Routes['GET']['/group/new']                                                                  = 'newGroup';
 
 $Routes['POST']['/login']                                                               = 'login';
