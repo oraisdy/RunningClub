@@ -25,7 +25,7 @@
       </div>
       <div class="right">
         <div class="group-big">
-          <h4>我参与的活动<small>(2)</small></h4>
+          <h4><?php echo $Lang['Title'] ?><small>(<?php echo $ActivitiesCount ?>)</small></h4>
           <?php
             foreach($Activities as $activity){
           ?>
