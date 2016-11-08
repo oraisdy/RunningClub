@@ -17,9 +17,9 @@
         <ul class="sidenav">
           <li class="title"><h4>活动 ACTIVITIES</h4></li>
           <hr>
-          <li><a href="#">我参与的活动</a></li>
-          <li><a href="#">进行中的活动</a></li>
-          <li><a href="#">结束的活动</a></li>
+          <li><a href="/activities/my">我参与的活动</a></li>
+          <li><a href="/activities/ongoing">进行中的活动</a></li>
+          <li><a href="/activities/due">结束的活动</a></li>
           <li><a href="/activity/new">创建活动</a></li>
         </ul>
       </div>

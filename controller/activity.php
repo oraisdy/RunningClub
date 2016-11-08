@@ -2,7 +2,7 @@
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //join activity
-    $formatted_time = date('Y-m-d H:i:s', time());
+    $formatted_time = date('Y-m-d H:i:s', $TimeStamp);
     $InsertResult = $DB -> query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)',array(
          $CurUserID,
         $_POST['id'],

@@ -23,7 +23,7 @@ $Routes['GET']['/index']                                                        
 $Routes['GET']['/login']                                                                   = 'login';
 $Routes['GET']['/logout']                                                                   = 'logout';
 $Routes['GET']['/register']                                                                = 'register';
-$Routes['GET']['/activities']                                                              = 'activities';
+$Routes['GET']['/activities/(?<action>my|ongoing|due)']                                                              = 'activities';
 $Routes['GET']['/groups']                                                                  = 'groups';
 $Routes['GET']['/a/(?<id>[0-9]+)']                                                          = 'activity';
 $Routes['GET']['/g/(?<id>[0-9]+)']                                                         = 'group';
@@ -42,9 +42,22 @@ foreach ($Routes as $Method => $SubRoutes) {
     if ($Method === $HTTPMethod) {
         $ParametersVariableName = '_' . $Method;
         foreach ($SubRoutes as $URL => $Controller) {
+
             if (preg_match("#^" . $URL . "$#i", $ShortRequestURI, $Parameters)) {
+//                echo '<br><br><br><br><br><br><br><br>';
+//                echo $URL;
+//                foreach ($Parameters as $Key => $Value) {
+//                    echo $Key." => ".$Value."<br>";
+//                }
+//                echo "122<br>";
+
                 $NotFound = false;
                 $Parameters = array_merge($Parameters, $HTTPParameters);
+
+//                foreach ($HTTPParameters as $Key => $Value) {
+//                    echo $Key." => ".$Value."<br>";
+//                }
+
                 foreach ($Parameters as $Key => $Value) {
                     if (!is_int($Key)) {
                         ${$ParametersVariableName}[$Key] = urldecode($Value);

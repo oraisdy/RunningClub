@@ -12,8 +12,8 @@
     <ul class="topNav" id="secondNav">
         <li class="nav-left"><img class="logo" src="../static/image/logo.png" alt="" /></li>
         <li><a href="/">首页</a></li>
-        <li><a href="/user">运动</a></li>
-        <li><a href="/activities">活动</a></li>
+        <li><a href="/u/<?php echo $CurUserID?>">运动</a></li>
+        <li><a href="/activities/my">活动</a></li>
         <li><a href="/groups">小组</a></li>
     </ul>
 </header>
