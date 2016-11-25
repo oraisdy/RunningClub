@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/user.css" media="screen" title="no title">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/submit.function.js"></script>
+    <script type="text/javascript">var id = <?php echo $User['id']?>;</script>
   </head>
   <body>
     <?php include("common/header.php"); ?>
@@ -25,9 +28,10 @@
         <p>
           共燃烧 <?php echo $Record['calories'];?> 大卡
         </p>
+        <button class="btn" onclick="buttonSubmit(this,'/user/follow','已关注');">关 注</button>
         <!-- group big start -->
         <div class="group-big">
-          <h4>我的小组<small>(2)</small></h4>
+          <h4><?php echo $User['login']?>的小组<small>(2)</small></h4>
           <!-- small group start -->
           <div class="group-small">
             <div class="img_container">
@@ -55,10 +59,15 @@
       </div>
       <div class="right">
 
+        <!-- group big start -->
+        <div class="group-big">
+          <h4><?php echo $User['login']?>的运动记录</h4>
+
+        </div><!-- big group end -->
 
         <!-- group big start -->
         <div class="group-big">
-          <h4>我参与的活动<small>(2)</small></h4>
+          <h4><?php echo $User['login']?>参与的活动<small>(<?php echo count($Activities)?>)</small></h4>
           <?php
           foreach($Activities as $activity){
           ?>
@@ -95,4 +104,5 @@
     </div>
     <?php include("common/footer.html"); ?>
   </body>
+
 </html>

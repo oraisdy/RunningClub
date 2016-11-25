@@ -27,7 +27,7 @@
         <!-- group big start -->
         <div class="group-big">
           <h4>创建小组</h4>
-          <form class="" action="/newGroup" method="post">
+          <form class="" action="/group/new" method="post">
             <div><label>小组名称：</label><input class="field" type="text" name="name" value="" placeholder=""></div>
             <div><label>小组描述：</label><textarea class="field" type="text" name="description" value="" placeholder=""></textarea></div>
             <input type="submit" class="btn" value="创  建">

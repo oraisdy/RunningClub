@@ -1,5 +1,5 @@
 function buttonSubmit(btn, url, newText) {
-    console.log(url);
+    // console.log(url);
     $.ajax({
         url: url,
         data: {
