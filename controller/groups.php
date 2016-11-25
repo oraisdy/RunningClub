@@ -1,14 +1,20 @@
 <?php
 
+include LanguagePath.'/groups.php';
 
-$Groups = $DB->query('select * from `group`;');
+if($_GET["action"] == 'my') {
+    $Groups = $DB->query('select * from `group` where id IN (?);',
+        $DB->column('select * from group_member where userId = :userId', array(
+            "userId" => $CurUserID,
+        ))
+        );
 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $Result = $DB->query('insert into `group`(name,description,creatorId,updatedAt) values(?,?,?,?);',
-        array($_POST['name'],$_POST['description'],1,"1327214268"));
-    echo $Result;
+} elseif ($_GET['action'] == 'all') {
+    $Groups = $DB->query('select * from `group`;');
 }
 
+
+$Lang['Title'] = $Lang['Title_'.$_GET['action']];
+$GroupsCount = count($Groups);
 
 include("/view/groups.php");

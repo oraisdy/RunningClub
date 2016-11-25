@@ -17,8 +17,8 @@
         <ul class="sidenav">
           <li class="title"><h4>小组 GROUPS</h4></li>
           <hr>
-          <li><a href="#">我参加的小组</a></li>
-          <li><a href="#">所有小组</a></li>
+          <li><a href="/groups/my">我参加的小组</a></li>
+          <li><a href="/groups/all">所有小组</a></li>
           <li><a href="/group/new">创建小组</a></li>
         </ul>
       </div>
@@ -26,15 +26,15 @@
       <div class="right">
         <!-- group big start -->
         <div class="group-big">
-          <h4>我的小组<small>(2)</small></h4>
+          <h4><?php echo $Lang['Title']; ?><small>(<?php echo $GroupsCount?>)</small></h4>
 
           <?php foreach ($Groups as $group) {?>
           <!-- small group start -->
           <div class="group-small">
             <div class="img_container">
-              <a href="#"><img src="../static/image/activity1.jpg" alt="" /></a>
+              <a href="/g/<?php echo $group['id'];?>"><img src=<?php echo $group['avatar_url'];?> alt="<?php echo $group['name'];?>" /></a>
             </div>
-            <a href="/g/<?php $group['id']?>"><?php $group['name']?></a>
+            <a href="/g/<?php echo $group['id']?>"><?php echo $group['name']?></a>
              <p class="icon_line">
                <i class="fa fa-child fa-blue" aria-hidden="true">4</i>
                <i class="fa fa-comments-o" aria-hidden="true">124</i>

@@ -23,8 +23,9 @@ $Routes['GET']['/index']                                                        
 $Routes['GET']['/login']                                                                   = 'login';
 $Routes['GET']['/logout']                                                                   = 'logout';
 $Routes['GET']['/register']                                                                = 'register';
-$Routes['GET']['/activities/(?<action>my|ongoing|due)']                                                              = 'activities';
-$Routes['GET']['/groups']                                                                  = 'groups';
+$Routes['GET']['/activities/(?<action>my|ongoing|due)']                                    = 'activities';
+$Routes['GET']['/groups/(?<action>my|all)']                                                                  = 'groups';
+
 $Routes['GET']['/a/(?<id>[0-9]+)']                                                          = 'activity';
 $Routes['GET']['/g/(?<id>[0-9]+)']                                                         = 'group';
 $Routes['GET']['/t/(?<id>[0-9]+)']                                                         = 'topic';
