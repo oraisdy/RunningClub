@@ -38,7 +38,7 @@
         <div class="group-big">
           <h4>创建活动</h4>
           <div class="form_container">
-            <form class="" action="/activity/new" method="post">
+            <form class="">
               <div><label>活动名称：</label><input class="field" type="text" name="title" value="" placeholder=""></div>
               <div><label>活动类型：</label>线上<input type="radio" checked="checked" name="type" value="线上" />
                 线下<input type="radio" name="type" value="线下" ></div>
@@ -46,7 +46,7 @@
               <div><label>活动时间：</label><input class="field" type="text" name="daterange"/></div>
               <div><label>活动描述：</label><textarea type="text" name="description" value="" placeholder=""></textarea></div>
               <div style="margin-left: 150px;"><input class="checkbox" checked type="checkbox" name="ifJoin">同时加入活动</div>
-              <input type="submit" class="btn" onclick="submit(this,'/activity/new');" value="发  布">
+              <input type="submit" class="btn" onclick="btnSubmit(this,'/activity/new');" value="发  布">
 <!--              <input type="submit" class="btn" value="创  建" onclick="buttonSubmit(this,'/activity/new','创建成功');">-->
             </form>
           </div>
@@ -56,22 +56,8 @@
 
 
     <script>
-      $(function () {
-        $('input[name="daterange"]').daterangepicker({
-          timePicker: true,
-          timePickerIncrement: 30,
-          locale: {
-            format: 'YYYY-MM-DD HH:mm',
-            separator: '<?php echo $Lang['Separator'];?>',
-            applyLabel:"确定",
-            cancelLabel:"取消",
-          },
-          startDate: '<?php echo $CurDate;?>',
-          endDate: '<?php echo $CurDate;?>',
-        });
-      });
 
-      function submit(btn, url) {
+      function btnSubmit(btn, url) {
         console.log(url);
         btn.innerHTML = "发布中";
         btn.style.backgroundColor = '#676767';
@@ -90,6 +76,23 @@
         });
 
       }
+
+      $(function () {
+        $('input[name="daterange"]').daterangepicker({
+          timePicker: true,
+          timePickerIncrement: 30,
+          locale: {
+            format: 'YYYY-MM-DD HH:mm',
+            separator: '<?php echo $Lang['Separator'];?>',
+            applyLabel:"确定",
+            cancelLabel:"取消",
+          },
+          startDate: '<?php echo $CurDate;?>',
+          endDate: '<?php echo $CurDate;?>',
+        });
+      });
+
+
 
     </script>
   </body>

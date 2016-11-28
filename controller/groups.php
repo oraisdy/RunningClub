@@ -7,7 +7,9 @@ if($_GET["action"] == 'my') {
         $DB->column('select * from group_member where userId = :userId', array(
             "userId" => $CurUserID,
         ))
-        );
+    );
+    $Groups = array_merge($Groups, $DB->query("select * from `group` WHERE creatorId = :userId;",array('userId'=>$CurUserID)));
+
 
 } elseif ($_GET['action'] == 'all') {
     $Groups = $DB->query('select * from `group`;');

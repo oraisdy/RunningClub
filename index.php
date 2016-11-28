@@ -31,7 +31,7 @@ $Routes['GET']['/g/(?<id>[0-9]+)']                                              
 $Routes['GET']['/t/(?<id>[0-9]+)']                                                         = 'topic';
 $Routes['GET']['/u/(?<id>[0-9]+)']                                                          = 'user';
 $Routes['GET']['/activities/new']                                                              = 'newActivity';
-$Routes['GET']['/group/new']                                                                  = 'newGroup';
+$Routes['GET']['/groups/new']                                                                  = 'newGroup';
 
 $Routes['POST']['/login']                                                               = 'login';
 $Routes['POST']['/register']                                                               = 'register';

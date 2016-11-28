@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/css/activity.css" media="screen" title="no title">
   </head>
   <body>
+  <?php include("/view/common/header.php");?>
     <section class="main">
       <ul class="detail_container">
         <li class="text_detail">
@@ -104,5 +105,6 @@
         </table>
       </div>
     </section>
+  <?php include("/view/common/footer.html");?>
   </body>
 </html>

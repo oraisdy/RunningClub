@@ -19,7 +19,7 @@
           <hr>
           <li><a href="/groups/my">我参加的小组</a></li>
           <li><a href="/groups/all">所有小组</a></li>
-          <li><a href="/group/new">创建小组</a></li>
+          <li><a href="/groups/new">创建小组</a></li>
         </ul>
       </div>
       <!-- right part begin -->
@@ -32,12 +32,12 @@
           <!-- small group start -->
           <div class="group-small">
             <div class="img_container">
-              <a href="/g/<?php echo $group['id'];?>"><img src=<?php echo $group['avatar_url'];?> alt="<?php echo $group['name'];?>" /></a>
+              <a href="/g/<?php echo $group['id'];?>"><img src="../static/image/group1.jpg" alt="<?php echo $group['name'];?>" /></a>
             </div>
             <a href="/g/<?php echo $group['id']?>"><?php echo $group['name']?></a>
              <p class="icon_line">
-               <i class="fa fa-child fa-blue" aria-hidden="true">4</i>
-               <i class="fa fa-comments-o" aria-hidden="true">124</i>
+               <i class="fa fa-child fa-blue" aria-hidden="true"><?php echo $group['memberCount']?></i>
+               <i class="fa fa-comments-o" aria-hidden="true"><?php echo $group['postCount']?></i>
              </p>
           </div><!-- small group end -->
           <?php }?>
