@@ -27,10 +27,10 @@
         </li>
         <li class="text_detail">
           <ul>
-            <li><h3><?php echo $Activity['name']?></h3></li>
+            <li><h3><?php echo $Activity['title']?></h3></li>
             <li><span><?php echo $Activity['type']?>, </span><span><?php echo $Activity['location']?></span></li>
-            <li>距离活动开始还有<small> 15 </small>天<small> 1 </small>小时<small> 53 </small>分</li>
-            <li>11-19 00:00 至 11-20 00:00</li>
+<!--            <li>距离活动开始还有<small> 15 </small>天<small> 1 </small>小时<small> 53 </small>分</li>-->
+            <li><?php echo $Activity['startAt']?> 至 <?php echo $Activity['endAt']?></li>
             <br>
             <li class="participants_container">
               <div class="sponsor_img_container">
@@ -41,7 +41,7 @@
                   <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" title="<?php echo $user['login'] ?>" />
                 <?php } ?>
 
-                <p>由<?php echo $Sponsor['login']?>发起，<?php echo $ParticipatesCount?>人参与了活动，<a href="#rank">查看全部</a></p>
+                <p>由<?php echo $Sponsor['login']?>发起，<?php echo count($Participates);?>人参与了活动，<a href="#rank">查看全部</a></p>
               </div>
             </li>
             <hr style="margin-right:0;">

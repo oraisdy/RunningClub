@@ -11,18 +11,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $ID   = intval($_GET['id']);
-    $SelectResult = $DB->query('select * from event where id = :id;',array('id'=>$ID));
-    if(!empty($SelectResult))
-        $Activity = $SelectResult[0];
+    $Activity = $DB -> row('select * from event where id = :id;',array('id'=>$ID));
 
-    $SponsorResult = $DB -> query('select * from user where id= :id;',array('id'=>$Activity['sponsorId']));
-    if(!empty($SponsorResult))
-        $Sponsor = $SponsorResult[0];
+    $Sponsor = $DB -> row('select * from user where id= :id;',array('id'=>$Activity['sponsorId']));
 
-    $ParticipateResult = $DB -> column('select userId from event_participant WHERE eventId=:id',array('id'=>$Activity['id']));
-    $ParticipatesCount = count($ParticipateResult);
-    $Participates = $DB -> query('select * from user where id in(?) limit 4;',$ParticipateResult);
-
+    $Participates = $DB->query('select * from user WHERE id IN (?);',
+        $DB -> column('select userId from event_participant WHERE eventId=:eventId',array(
+            'eventId' => $Activity['id'],
+        ))
+    );
 }
 
 include("/view/activity.php");

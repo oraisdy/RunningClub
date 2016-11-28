@@ -15,6 +15,5 @@ if($_GET["action"] == 'my') {
 
 
 $Lang['Title'] = $Lang['Title_'.$_GET['action']];
-$GroupsCount = count($Groups);
 
 include("/view/groups.php");

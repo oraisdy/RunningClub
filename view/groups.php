@@ -26,7 +26,7 @@
       <div class="right">
         <!-- group big start -->
         <div class="group-big">
-          <h4><?php echo $Lang['Title']; ?><small>(<?php echo $GroupsCount?>)</small></h4>
+          <h4><?php echo $Lang['Title']; ?><small>(<?php echo count($Groups);?>)</small></h4>
 
           <?php foreach ($Groups as $group) {?>
           <!-- small group start -->
