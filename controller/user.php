@@ -7,12 +7,21 @@ $Record = $DB -> row('select count(*) as days,sum(distance) as distances from re
 $Record['distances'] = $Record['distances']/1000;
 $Record['calories'] = $User['weight']*$Record['distances'];
 
-$Activities = $DB->query('select * from event WHERE id in (?);',
-    $DB->column('select eventId from event_participant WHERE userId = :userId', array("userId"=>$id))
+
+$Recent = array_reverse($DB -> query('select updatedAt as date, distance from record WHERE userId = :userId 
+            ORDER BY updatedAt desc limit 7;', array('userId' => $id)));
+$RecentDates =  array();
+$RecentDistances = array();
+foreach ($Recent as $List){
+    array_push($RecentDates, explode(" ",$List['date'])[0]);
+    array_push($RecentDistances, $List['distance']/1000);
+};
+
+
+$Activities = $DB->query('select * from event WHERE id in (?) ORDER BY startAt DESC;',
+    $DB->column('select eventId from event_participant WHERE userId = :userId ;', array("userId"=>$id))
 );
 
-$Activities = $DB->query('select * from event WHERE id in (?);',
-    $DB->column('select eventId from event_participant WHERE userId = :userId', array("userId"=>$id))
-);
-//echo '<br><br><br><br><br><br><br><br>'.count($Activities);
+
+
 include("/view/user.php");

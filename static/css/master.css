@@ -133,7 +133,7 @@
 .main .group-middle .col_container {
   display: inline-block;
   vertical-align:middle;
-  margin-top: 10px;
+  margin: 10px 20px;
 }
 
 .main .group-middle .img_container{
@@ -148,9 +148,10 @@
 
 .main .group-middle .col_container li {
   list-style: none;
+  display: inline-block;
   text-align: center;
   padding: 5px 0;
-  margin: 0 25px;
+  margin: 0 5px;
 }
 
 .main .group-small {

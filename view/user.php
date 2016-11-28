@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/css/user.css" media="screen" title="no title">
     <script type="text/javascript" src="../static/js/jquery.js"></script>
     <script type="text/javascript" src="../static/js/submit.function.js"></script>
+    <script type="text/javascript" src="../static/js/library/echarts.min.js"></script>
     <script type="text/javascript">var id = <?php echo $User['id']?>;</script>
   </head>
   <body>
@@ -62,14 +63,14 @@
         <!-- group big start -->
         <div class="group-big">
           <h4><?php echo $User['login']?>的运动记录</h4>
-
+          <div id="chart" style="width: 600px;height:400px;"></div>
         </div><!-- big group end -->
 
         <!-- group big start -->
         <div class="group-big">
           <h4><?php echo $User['login']?>参与的活动<small>(<?php echo count($Activities)?>)</small></h4>
           <?php
-          foreach($Activities as $activity){
+          foreach($Activities as $Activity){
           ?>
           <!-- middle group start -->
           <div class="group-middle">
@@ -77,22 +78,18 @@
               <a href="#"><img src="../static/image/activity1.jpg" alt="" /></a>
             </div>
             <div class="text_container">
-              <a href="#"><h4><?php echo $activity['title']?></h4></a>
+              <a href="#"><h4><?php echo $Activity['title']?></h4></a>
               <div class="col_container">
                 <li><i class="fa fa-hashtag fa-border" aria-hidden="true"></i></li>
-                <li><?php echo $activity['type']?></li>
+                <li><?php echo $Activity['type']?></li>
               </div>
               <div class="col_container">
                 <li><i class="fa fa-location-arrow fa-border" aria-hidden="true"></i></li>
-                <li><?php echo $activity['location']?></li>
-              </div>
-              <div class="col_container">
-                <li><i class="fa fa-users fa-border" aria-hidden="true"></i></li>
-                <li>15 人</li>
+                <li><?php echo $Activity['location']?></li>
               </div>
               <div class="col_container">
                 <li><i class="fa fa-calendar fa-border" aria-hidden="true"></i></li>
-                <li>15 天 1 小时 53分</li>
+                <li><?php echo explode(" ", $Activity['startAt'])[0];?></li>
               </div>
             </div>
           </div>
@@ -103,6 +100,72 @@
     </div>
     </div>
     <?php include("common/footer.html"); ?>
+
+    <script>
+      var myChart = echarts.init(document.getElementById('chart'));
+
+      option = {
+        tooltip: {
+          trigger: 'axis'
+        },
+        color:['#fa5400'],
+        toolbox: {
+          show: true,
+          feature: {
+            dataZoom: {
+              yAxisIndex: 'none'
+            },
+            dataView: {readOnly: false},
+            magicType: {type: ['line', 'bar']},
+            restore: {},
+            saveAsImage: {}
+          }
+        },
+        xAxis:  {
+          type: 'category',
+          boundaryGap: false,
+          data: <?php echo json_encode($RecentDates);?>
+        },
+        yAxis: {
+          type: 'value',
+          axisLabel: {
+            formatter: '{value} km'
+          }
+        },
+        series: [
+          {
+            type:'line',
+            data:<?php echo json_encode($RecentDistances);?>,
+            markPoint: {
+              data: [
+                {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+              ]
+            },
+            markLine: {
+              data: [
+                {type: 'average', name: '平均值'},
+                [{
+                  symbol: 'none',
+                  x: '90%',
+                  yAxis: 'max'
+                }, {
+                  symbol: 'circle',
+                  label: {
+                    normal: {
+                      position: 'start',
+                      formatter: '最大值'
+                    }
+                  },
+                  type: 'max',
+                  name: '最高点'
+                }]
+              ]
+            }
+          }
+        ]
+      };
+      myChart.setOption(option);
+    </script>
   </body>
 
 </html>
