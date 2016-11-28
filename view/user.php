@@ -29,7 +29,14 @@
         <p>
           共燃烧 <?php echo $Record['calories'];?> 大卡
         </p>
+        <?php if(!$IsMe && !$IsFollowing) {?>
         <button class="btn" onclick="buttonSubmit(this,'/user/follow','已关注');">关 注</button>
+        <?php } elseif($IsFollowing && !$IsFriend) {?>
+            <button class="btn inactive" onclick="buttonSubmit(this,'','');">已关注</button>
+        <?php } elseif($IsFriend) { ?>
+              <button class="btn inactive" onclick="buttonSubmit(this,'','');">  相互关注</button>
+        <?php } ?>
+
         <!-- group big start -->
         <div class="group-big">
           <h4><?php echo $User['login']?>的小组<small>(2)</small></h4>

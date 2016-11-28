@@ -3,6 +3,12 @@
 $id = intval($_GET['id']);
 $User = $DB -> row('select * from user where id=:id;',array("id"=>$id));
 
+$IsMe = $id==$CurUserID;
+$IsFollowing = $DB -> row('SELECT count(*) AS cnt FROM follow_relation WHERE userId=:userId AND followingId = :followingId',
+    array('userId'=>$CurUserID, 'followingId'=>$id))['cnt'];
+$IsFriend = $IsFollowing && $DB -> row('SELECT count(*) AS cnt FROM follow_relation WHERE userId=:userId AND followingId = :followingId',
+    array('userId'=>$id, 'followingId'=>$CurUserID))['cnt'];
+
 $Record = $DB -> row('select count(*) as days,sum(distance) as distances from record WHERE userId=:userId',array('userId'=>$id));
 $Record['distances'] = $Record['distances']/1000;
 $Record['calories'] = $User['weight']*$Record['distances'];
