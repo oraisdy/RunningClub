@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
-    <link rel="stylesheet" href="../static/css/activity.css" media="screen" title="no title">
+    <link rel="stylesheet" href="../static/css/group.css" media="screen" title="no title">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/submit.function.js"></script>
+    <script type="text/javascript">var id = <?php echo $Group['id']?>;</script>
   </head>
   <body>
   <?php include("/view/common/header.php");?>
@@ -15,30 +18,27 @@
         <li class="text_detail">
           <ul>
             <li><img src="../static/image/group1.jpg" alt="" class="avatar_circle"/>
-            <h3 style="margin-top:5px">早睡早起小组</h3></li>
-            <li>一个从不在夜里偷偷commit的小组</li>
+            <h3 style="margin-top:5px"><?php echo $Group['name']; ?></h3></li>
+            <li><?php echo $Group['description']; ?></li>
             <br>
             <li class="participants_container">
               <div class="sponsor_img_container">
-                <img class="sponsor_img" src="../static/image/avatar.jpg" alt="发起者" />
+                <img class="sponsor_img" src="../static/image/avatar.jpg" alt="<?php echo $Creator['login'];?>" />
               </div>
               <div class="participant_img_container">
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <img class="participant_img" src="../static/image/avatar.jpg" alt="参与者" />
-                <p>由Dora建立，共5个成员，<a href="#">查看全部</a></p>
+                <?php foreach ($Members as $Member) {?>
+                <img class="participant_img" src="../static/image/avatar.jpg" alt=<?php echo $Member['login'];?> />
+                <?php }?>
+                <p>由<?php echo $Creator['login'];?>建立，共<?php echo count($Members)+1;?>个成员，<a href="#">查看全部</a></p>
               </div>
             </li>
             <hr style="margin-right:0;">
             <li><div class="btn_container">
-              <a class='btn' href="#">加入小组</a>
+                <?php if(!$IsMember) {?>
+                <a class='btn active' onclick="buttonSubmit(this, '/group/join', '已加入');">加入小组</a>
+                <?php } else { ?>
+                <a class='btn inactive' onclick="buttonSubmit(this, '', '加入小组');">已加入</a>
+                <?php } ?>
             </div></li>
           </ul>
         </li>

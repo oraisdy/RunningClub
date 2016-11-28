@@ -21,6 +21,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         ))
     );
 
+    $IsParticipate = false;
+    foreach ($Participates as $member){
+        if ($member['id']==$CurUserID){
+            $IsParticipate = true;break;
+        }
+    }
+
     $Rank = $DB -> query("select * from record where userId in (?) AND updatedAt BETWEEN '".$Activity['startAt']."' and '".$Activity['endAt']."';",
         $DB -> column('select userId from event_participant WHERE eventId=:eventId;',array(
             'eventId' => $Activity['id'],
@@ -33,4 +40,4 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 include("/view/activity.php");
 
-echo $Activity['startAt']." ".$Activity['endAt'].count($Rank);
+//echo $Activity['startAt']." ".$Activity['endAt'].count($Rank);
