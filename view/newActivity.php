@@ -36,7 +36,7 @@
       </div>
       <div class="right">
         <div class="group-big">
-          <h4>我参与的活动<small>(2)</small></h4>
+          <h4>创建活动</h4>
           <div class="form_container">
             <form class="" action="/activity/new" method="post">
               <div><label>活动名称：</label><input class="field" type="text" name="title" value="" placeholder=""></div>

@@ -10,5 +10,9 @@ $Record['calories'] = $User['weight']*$Record['distances'];
 $Activities = $DB->query('select * from event WHERE id in (?);',
     $DB->column('select eventId from event_participant WHERE userId = :userId', array("userId"=>$id))
 );
+
+$Activities = $DB->query('select * from event WHERE id in (?);',
+    $DB->column('select eventId from event_participant WHERE userId = :userId', array("userId"=>$id))
+);
 //echo '<br><br><br><br><br><br><br><br>'.count($Activities);
 include("/view/user.php");

@@ -2,6 +2,7 @@
 
 include LanguagePath.'/activities.php';
 
+
 if($_GET['action'] == 'my') {
 
     $Activities = $DB->query('select * from event WHERE id IN (?);',
@@ -25,7 +26,7 @@ if($_GET['action'] == 'my') {
 }
 
 $Lang['Title'] = $Lang['Title_'.$_GET['action']];
-$ActivitiesCount = count($Activities);
+//$ActivitiesCount = count($Activities);
 
-//echo '<br><br><br><br><br><br><br>'.$Lang['Title'];
+
 include("/view/activities.php");

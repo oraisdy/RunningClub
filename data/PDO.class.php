@@ -18,7 +18,7 @@ class DB {
 
     private function Init($query, $parameters = "") {
         try {
-            if($this->sQuery     = $this->file_db->prepare($query)){
+            if($this->sQuery     = $this->file_db->prepare($this->BuildParams($query,$parameters))){
                 if (!empty($parameters)) {
                     if (array_key_exists(0, $parameters)) {     //序号型
                         $parametersType = true;

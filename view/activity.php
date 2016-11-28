@@ -27,7 +27,7 @@
         </li>
         <li class="text_detail">
           <ul>
-            <li><h3>北京马拉松</h3></li>
+            <li><h3><?php echo $Activity['name']?></h3></li>
             <li><span><?php echo $Activity['type']?>, </span><span><?php echo $Activity['location']?></span></li>
             <li>距离活动开始还有<small> 15 </small>天<small> 1 </small>小时<small> 53 </small>分</li>
             <li>11-19 00:00 至 11-20 00:00</li>
