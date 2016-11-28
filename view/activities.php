@@ -46,11 +46,11 @@
                   </div>
                   <div class="col_container">
                     <li><i class="fa fa-users fa-border" aria-hidden="true"></i></li>
-                    <li>15 人</li>
+                    <li><?php echo $activity['cnt'];?> 人</li>
                   </div>
                   <div class="col_container">
                     <li><i class="fa fa-calendar fa-border" aria-hidden="true"></i></li>
-                    <li>15 天 1 小时 53分</li>
+                    <li><?php echo $activity['startAt'];?></li>
                   </div>
                 </div>
               </div>
