@@ -61,7 +61,7 @@
           timePicker: true,
           timePickerIncrement: 30,
           locale: {
-            format: 'YYYY-MM-DD H:mm',
+            format: 'YYYY-MM-DD HH:mm',
             separator: '<?php echo $Lang['Separator'];?>',
             applyLabel:"确定",
             cancelLabel:"取消",

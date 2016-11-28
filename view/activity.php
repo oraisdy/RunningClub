@@ -60,6 +60,7 @@
       </div>
       <div class="result_container" id="rank">
         <h4>参与者排名</h4>
+
       </div>
     </section>
     <?php include("/view/common/footer.html");?>
