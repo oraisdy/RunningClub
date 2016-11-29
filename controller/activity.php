@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $Users = array();
 
     foreach ($Rank as $item) {
-        array_push($Scores,$item['score']);
+        array_push($Scores,$item['score']/1000);
         array_push($Users,$item['login']);
     }
     $Scores = array_reverse($Scores);
@@ -52,4 +52,4 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 include("/view/activity.php");
 
-echo $Activity['startAt']." ".$Activity['endAt']." ".json_encode($Rank);
+//echo $Activity['startAt']." ".$Activity['endAt']." ".json_encode($Rank);

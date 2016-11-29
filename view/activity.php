@@ -106,14 +106,20 @@
                 }
               ],
               animation:false,
+              tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                  type: 'shadow'
+                }
+              },
               series : [
                 {
                   type:'bar',
                   itemStyle: {normal: {
-                    label : {show: true,position:'inside'}
+                    label : {show: true,position:'right'}
                   }},
-                  barWidth:85,
-                  barGap:'20%',
+//                  barWidth:85,
+//                  barGap:'20%',
                   data:<?php echo json_encode($Scores)?>
                 }
               ]
