@@ -32,7 +32,7 @@
         <!-- small group start -->
         <div class="group-small">
           <div class="img_container">
-            <a href="/g/<?php echo $group['id'];?>"><img src="../static/image/group1.jpg" alt="<?php echo $group['name'];?>" /></a>
+            <a href="/g/<?php echo $group['id'];?>"><img src=<?php echo $group['avatar_url'];?> alt="<?php echo $group['name'];?>" /></a>
           </div>
           <a href="/g/<?php echo $group['id']?>"><?php echo $group['name']?></a>
           <p class="icon_line">

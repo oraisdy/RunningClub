@@ -17,19 +17,19 @@
       <ul class="detail_container">
         <li class="text_detail">
           <ul>
-            <li><img src="../static/image/group1.jpg" alt="" class="avatar_circle"/>
+            <li><img src=<?php echo $Group['avatar_url']; ?> alt=<?php echo $Group['name']; ?> class="avatar_circle"/>
             <h3 style="margin-top:5px"><?php echo $Group['name']; ?></h3></li>
-            <li><?php echo $Group['description']; ?></li>
+            <li><p style="line-height: 30px;"><?php echo $Group['description'];?></p></li>
             <br>
             <li class="participants_container">
               <div class="sponsor_img_container">
-                <img class="sponsor_img" src="../static/image/avatar.jpg" alt="<?php echo $Creator['login'];?>" />
+                <img class="sponsor_img" src=<?php echo $Creator['avatar_url']; ?> title="<?php echo $Creator['login'];?>" />
               </div>
               <div class="participant_img_container">
                 <?php foreach ($Members as $Member) {?>
-                <img class="participant_img" src="../static/image/avatar.jpg" alt=<?php echo $Member['login'];?> />
+                <img class="participant_img" src=<?php echo $Member['avatar_url']; ?> title=<?php echo $Member['login'];?> />
                 <?php }?>
-                <p>由<?php echo $Creator['login'];?>建立，共<?php echo count($Members)+1;?>个成员，<a href="#">查看全部</a></p>
+                <p>由<?php echo $Creator['login'];?>建立，共<?php echo $Group['memberCount'];?>个成员，<a href="#">查看全部</a></p>
               </div>
             </li>
             <hr style="margin-right:0;">

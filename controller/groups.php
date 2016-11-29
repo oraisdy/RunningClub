@@ -4,11 +4,10 @@ include LanguagePath.'/groups.php';
 
 if($_GET["action"] == 'my') {
     $Groups = $DB->query('select * from `group` where id IN (?);',
-        $DB->column('select * from group_member where userId = :userId', array(
+        $DB->column('select groupId from group_member where userId = :userId', array(
             "userId" => $CurUserID,
         ))
     );
-    $Groups = array_merge($Groups, $DB->query("select * from `group` WHERE creatorId = :userId;",array('userId'=>$CurUserID)));
 
 
 } elseif ($_GET['action'] == 'all') {

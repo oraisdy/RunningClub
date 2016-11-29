@@ -35,14 +35,14 @@
             <br>
             <li class="participants_container">
               <div class="sponsor_img_container">
-                <img class="sponsor_img" src="/static/image/avatar.jpg" alt="发起者" title="<?php echo $Sponsor['login'] ?>"/>
+                <img class="sponsor_img" src=<?php echo $Sponsor['avatar_url'];?> alt="发起者" title="<?php echo $Sponsor['login'] ?>"/>
               </div>
               <div class="participant_img_container">
                 <?php foreach ($Participates as $user){  ?>
-                  <img class="participant_img" src="/static/image/avatar.jpg" alt="参与者" title="<?php echo $user['login'] ?>" />
+                  <img class="participant_img" src=<?php echo $user['avatar_url'];?> alt="参与者" title="<?php echo $user['login'] ?>" />
                 <?php } ?>
 
-                <p>由<?php echo $Sponsor['login']?>发起，<?php echo count($Participates);?>人参与了活动，<a href="#rank">查看全部</a></p>
+                <p>由<?php echo $Sponsor['login']?>发起，<?php echo $Activity['participateCount'];?>人参与了活动，<a href="#rank">查看全部</a></p>
               </div>
             </li>
             <hr style="margin-right:0;">
@@ -61,7 +61,7 @@
       </ul>
       <div class="description_container">
         <h4>活动介绍</h4>
-        <p><?php echo $Activity['description']?></p>
+        <pre><?php echo $Activity['description']?></pre>
       </div>
       <div class="result_container" id="rank">
 

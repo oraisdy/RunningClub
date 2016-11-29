@@ -95,4 +95,10 @@ class DB {
         $this->sQuery->closeCursor();
         return $resultRow;
     }
+
+    public function single($query, $params = null)
+    {
+        $this->Init($query, $params);
+        return $this->sQuery->fetchColumn();
+    }
 }

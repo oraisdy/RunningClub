@@ -18,7 +18,7 @@
     </div>
     <div class="main">
       <div class="left">
-        <img class="avatar" src="../static/image/avatar.jpg" alt="" style="width:200px; height:200px"/>
+        <img class="avatar" src=<?php echo $User['avatar_url'];?> alt="" style="width:200px; height:200px"/>
         <h4 class="nickname"><?php echo $User['login'];?></h4>
         <p>
           已运动 <?php echo $Record['days'];?> 天
@@ -30,40 +30,44 @@
           共燃烧 <?php echo $Record['calories'];?> 大卡
         </p>
         <?php if(!$IsMe && !$IsFollowing) {?>
-        <button class="btn" onclick="buttonSubmit(this,'/user/follow','已关注');">关 注</button>
+        <button class="btn" onclick="buttonSubmit(this,'/user/follow','已关注');" title="关注">关 注</button>
         <?php } elseif($IsFollowing && !$IsFriend) {?>
-            <button class="btn inactive" onclick="buttonSubmit(this,'','');">已关注</button>
+            <button class="btn inactive" onclick="buttonSubmit(this,'','');" title="取消关注">已关注</button>
         <?php } elseif($IsFriend) { ?>
-              <button class="btn inactive" onclick="buttonSubmit(this,'','');">  相互关注</button>
+              <button class="btn inactive" onclick="buttonSubmit(this,'','');" title="取消关注">相互关注</button>
         <?php } ?>
 
         <!-- group big start -->
         <div class="group-big">
-          <h4><?php echo $User['login']?>的小组<small>(2)</small></h4>
+          <h4><?php echo $User['login']?>的好友<small>(<?php echo count($Friends);?>)</small></h4>
+          <?php foreach ($Friends as $friend) {?>
           <!-- small group start -->
           <div class="group-small">
             <div class="img_container">
-              <a href="#"><img src="../static/image/group1.jpg" alt="" /></a>
+              <a href="/u/<?php echo $friend['id'];?>"><img src=<?php echo $friend['avatar_url'];?> alt=<?php echo $friend['login'];?> /></a>
             </div>
-            <a href="#">骑行爱好者</a>
-             <p class="icon_line">
-               <i class="fa fa-child fa-blue" aria-hidden="true">4</i>
-               <i class="fa fa-comments-o" aria-hidden="true">124</i>
-             </p>
+            <a href="/u/<?php echo $friend['id'];?>"><?php echo $friend['login'];?></a>
           </div><!-- small group end -->
+          <?php } ?>
+        </div><!-- big group ends -->
 
+        <!-- group big start -->
+        <div class="group-big">
+          <h4><?php echo $User['login']?>的小组<small>(<?php echo count($Groups)?>)</small></h4>
+          <?php foreach($Groups as $Group){ ?>
           <!-- small group start -->
           <div class="group-small">
             <div class="img_container">
-              <a href="#"><img src="../static/image/group2.jpg" alt="" /></a>
+              <a href="/g/<?php echo $Group['id']; ?>"><img src=<?php echo $Group['avatar_url'];?> title=<?php echo $Group['name'] ?> /></a>
             </div>
-            <a href="#">攀岩</a>
+            <a href="/g/<?php echo $Group['id']; ?>"><?php echo $Group['name']; ?></a>
              <p class="icon_line">
-               <i class="fa fa-child fa-blue" aria-hidden="true">4</i>
-               <i class="fa fa-comments-o" aria-hidden="true">124</i>
+               <i class="fa fa-child fa-blue" aria-hidden="true"><?php echo $Group['memberCount'] ?></i>
+               <i class="fa fa-comments-o" aria-hidden="true"><?php echo $Group['postCount'] ?></i>
              </p>
           </div><!-- small group end -->
-        </div><!-- big group start -->
+          <?php }?>
+        </div><!-- big group ends -->
       </div>
       <div class="right">
 

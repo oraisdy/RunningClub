@@ -22,14 +22,16 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         $CurUserID
     ));
 
-    if($_POST['ifJoin'])
-        $JoinResult = $DB -> query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)',array(
+    if($_POST['ifJoin']) {
+        $JoinResult = $DB->query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)', array(
             $CurUserID,
             $EventId,
             $CurDate,
         ));
-
-
+        $DB -> query('update `event` set participateCount=event.participateCount+1 WHERE id=:id;', array(
+            'id' => $EventId
+        ));
+    }
 }
 
 include("/view/newActivity.php");

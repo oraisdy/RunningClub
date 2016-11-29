@@ -13,6 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['description'],
             $CurUserID,
             $CurDate));
+    $InsertResult = $DB -> save('insert into group_member(userId, groupId, joinAt) values(?,?,?)',array(
+        $CurUserID,
+        $GroupId,
+        $CurDate,
+    ));
 }
 
 include("/view/newGroup.php");

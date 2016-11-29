@@ -7,6 +7,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_POST['id'],
         $CurDate,
     ));
+    $DB -> query('update `event` set participateCount=event.participateCount+1 WHERE id=:id;', array(
+        'id' => $_POST['id']
+    ));
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
