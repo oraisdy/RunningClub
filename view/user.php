@@ -82,10 +82,10 @@
           <!-- middle group start -->
           <div class="group-middle">
             <div class="img_container">
-              <a href="#"><img src="../static/image/activity1.jpg" alt="" /></a>
+              <a href="/a/<?php echo $Activity['id'];?>"><img src="../static/image/activity1.jpg" alt="" /></a>
             </div>
             <div class="text_container">
-              <a href="#"><h4><?php echo $Activity['title']?></h4></a>
+              <a href="/a/<?php echo $Activity['id'];?>"><h4><?php echo $Activity['title']?></h4></a>
               <div class="col_container">
                 <li><i class="fa fa-hashtag fa-border" aria-hidden="true"></i></li>
                 <li><?php echo $Activity['type']?></li>

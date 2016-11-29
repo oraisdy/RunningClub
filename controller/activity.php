@@ -28,16 +28,25 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
         }
     }
 
-    $Rank = $DB -> query("select * from record where userId in (?) AND updatedAt BETWEEN '".$Activity['startAt']."' and '".$Activity['endAt']."';",
+    $Rank = $DB -> query("select user.id,user.login, sum(distance) as score from record LEFT JOIN user on record.userId = user.id 
+        where userId in (?) AND updatedAt BETWEEN '".$Activity['startAt']."' and '".$Activity['endAt']."' group by userId order by score desc;",
         $DB -> column('select userId from event_participant WHERE eventId=:eventId;',array(
             'eventId' => $Activity['id'],
             ))
     );
+    $Scores = array();
+    $Users = array();
 
+    foreach ($Rank as $item) {
+        array_push($Scores,$item['score']);
+        array_push($Users,$item['login']);
+    }
+    $Scores = array_reverse($Scores);
+    $Users = array_reverse($Users);
 
 
 }
 
 include("/view/activity.php");
 
-//echo $Activity['startAt']." ".$Activity['endAt'].count($Rank);
+echo $Activity['startAt']." ".$Activity['endAt']." ".json_encode($Rank);

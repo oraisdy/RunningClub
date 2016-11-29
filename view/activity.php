@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/static/css/activity.css" media="screen" title="no title">
     <script type="text/javascript" src="../static/js/jquery.js"></script>
     <script type="text/javascript" src="../static/js/submit.function.js"></script>
+<!--    <script type="text/javascript" src="../static/js/library/echarts.js"></script>-->
     <script type="text/javascript">var id = <?php echo $Activity['id']?>;</script>
   </head>
   <body>
@@ -63,12 +64,66 @@
         <p><?php echo $Activity['description']?></p>
       </div>
       <div class="result_container" id="rank">
-        <h4>参与者排名</h4>
 
-      </div>
+      <h4>参与者排名</h4>
+      <div id="chart" style="width: 1080px;height:400px; overflow: auto;"></div>
     </section>
     <?php include("/view/common/footer.html");?>
-  
+
+    <!-- ECharts单文件引入 -->
+    <script src="/static/js/library/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+      // 路径配置
+      require.config({
+        paths: {
+          echarts: '/static/js/library/build/dist/'
+        }
+      });
+
+      // 使用
+      require(
+          [
+            'echarts',
+            'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+          ],
+          function (ec) {
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = ec.init(document.getElementById('chart'));
+
+            option = {
+              xAxis : [
+                {
+                  type : 'value',
+                  boundaryGap : [0, 0.01],
+                  show:false
+                }
+              ],
+              yAxis : [
+                {
+                  type : 'category',
+                  data : <?php echo json_encode($Users)?>,
+                  axisTick:[{show:false}]
+                }
+              ],
+              animation:false,
+              series : [
+                {
+                  type:'bar',
+                  itemStyle: {normal: {
+                    label : {show: true,position:'inside'}
+                  }},
+                  barWidth:85,
+                  barGap:'20%',
+                  data:<?php echo json_encode($Scores)?>
+                }
+              ]
+            };
+
+            // 为echarts对象加载数据
+            myChart.setOption(option);
+          }
+      );
+    </script>
 
   </body>
 </html>

@@ -71,6 +71,7 @@
   min-width: 450px;
   display: inline-block;
   vertical-align: top;
+  max-width: 950px;
   /*padding-top: */
 }
 
@@ -139,7 +140,7 @@
 .main .group-middle .img_container{
   overflow: hidden;
   /*height: 100%;*/
-  width: 420px;
+  width: 400px;
 }
 
 .main .group-middle .img_container img {

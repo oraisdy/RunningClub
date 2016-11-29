@@ -18,7 +18,7 @@ require("/data/PDO.class.php");
 $DB = new DB();
 
 $CurUserID             = intval(GetCookie('UserID'));
-$CurUserName             = intval(GetCookie('UserName'));
+$CurUserName             = GetCookie('UserName');
 
 //批量设置Cookie
 function SetCookies($CookiesArray, $Expires = 0)

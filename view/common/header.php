@@ -1,8 +1,8 @@
 <header>
     <ul class="topNav" id="firstNav">
-        <li class="nav-left"><a href="index">RUNNING CLUB</a></li>
+        <li class="nav-left"><a href="/index">RUNNING CLUB</a></li>
         <li class="nav-left"><a href="#">帮助</a></li>
-        <li class="nav-right"><a href="/">联系我们</a></li>
+        <li class="nav-right"><a href="https://github.com/oraisdy/RunningClub">联系我们</a></li>
         <?php echo $CurUserID==null?
             '<li class="nav-right"><a href="/login">登录/创建账号</a></li>':
             '<li class="nav-right"><a href="/logout">'.$CurUserName.'</a></li>'
