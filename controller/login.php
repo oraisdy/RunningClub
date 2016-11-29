@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $TemporaryUserExpirationTime = $Expires * 86400 + $TimeStamp;
 
+        echo '<br><br><br><br><br><br><br><br><br><br><br>'.$DBUser['login'];
             SetCookies(array(
                 'UserID' => $DBUser['id'],
                 'UserName' => $DBUser['login'],
