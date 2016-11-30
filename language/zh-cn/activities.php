@@ -8,4 +8,5 @@ $Lang = array_merge($Lang, array(
     'Title_my' => '我参加的活动',
     'Title_ongoing' => '进行中的活动',
     'Title_due' => '结束的活动',
+    'Title_submit' => '我发布的活动',
 ));

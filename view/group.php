@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>小组 - <?php echo $Group['name']; ?></title>
+    <meta name="description" content="<?php echo $Group['description'];?>">
     <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
@@ -17,7 +18,7 @@
       <ul class="detail_container">
         <li class="text_detail">
           <ul>
-            <li><img src=<?php echo $Group['avatar_url']; ?> alt=<?php echo $Group['name']; ?> class="avatar_circle"/>
+            <li><img src=<?php echo $Group['avatar_url']; ?> title=<?php echo $Group['name']; ?> class="avatar_circle"/>
             <h3 style="margin-top:5px"><?php echo $Group['name']; ?></h3></li>
             <li><p style="line-height: 30px;"><?php echo $Group['description'];?></p></li>
             <br>
@@ -35,9 +36,9 @@
             <hr style="margin-right:0;">
             <li><div class="btn_container">
                 <?php if(!$IsMember) {?>
-                <a class='btn active' onclick="buttonSubmit(this, '/group/join', '已加入');">加入小组</a>
+                <a class='btn active' onclick="buttonSubmit(this, id,'/group/join', '已加入');">加入小组</a>
                 <?php } else { ?>
-                <a class='btn inactive' onclick="buttonSubmit(this, '', '加入小组');">已加入</a>
+                <a class='btn inactive' onclick="buttonSubmit(this, id,'', '加入小组');">已加入</a>
                 <?php } ?>
             </div></li>
           </ul>
@@ -54,25 +55,25 @@
               <th class="last">最后回应</th>
             </tr>
             <tr>
-              <td class="title"><a href="/topic">ddl推迟了</a></td>
+              <td class="title"><a href="/view/topic.html">ddl推迟了</a></td>
               <td class="author"><a href="/user">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-20 10:48:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="topic.html">早起打卡</a></td>
+              <td class="title"><a href="/view/topic.html">早起打卡</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-25 06:15:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="topic.html">ddl推迟了</a></td>
+              <td class="title"><a href="/view/topic.html">ddl推迟了</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-20 10:48:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="topic.html">早起打卡</a></td>
+              <td class="title"><a href="/view/topic.html">早起打卡</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-25 06:15:04</td>
@@ -103,6 +104,14 @@
             </tr>
           </tbody>
         </table>
+        <hr style="margin-right:0;">
+        <div class="btn_container" style="text-align: center">
+          <?php if($IsMember) {?>
+            <a class='btn active' onclick="buttonSubmit(this, id,'', '');">发  帖</a>
+          <?php } else { ?>
+            <a class='btn inactive' onclick="buttonSubmit(this, id,'', '');">加入小组后可发帖</a>
+          <?php } ?>
+        </div>
       </div>
     </section>
   <?php include("/view/common/footer.html");?>

@@ -5,8 +5,10 @@
         <li class="nav-right"><a href="https://github.com/oraisdy/RunningClub">联系我们</a></li>
         <?php echo $CurUserID==null?
             '<li class="nav-right"><a href="/login">登录/创建账号</a></li>':
-            '<li class="nav-right"><a href="/logout">'.$CurUserName.'</a></li>'
+            '<li class="nav-right"><a href="/profile/modify">'.$CurUserName.'</a></li>
+            <li class="nav-right"><a href="#">'.count($Messages).'条新消息</a></li>'
         ?>
+
 
     </ul>
     <ul class="topNav" id="secondNav">

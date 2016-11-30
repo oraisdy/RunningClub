@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>小组 - 创建小组</title>
     <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
@@ -31,7 +31,7 @@
           <form class="" action="/group/new" method="post">
             <div><label>小组名称：</label><input class="field" type="text" name="name" value="" placeholder=""></div>
             <div><label>小组描述：</label><textarea class="field" type="text" name="description" value="" placeholder=""></textarea></div>
-            <input type="submit" class="btn" value="创  建" onclick="btnSubmit(this,'/group/new');">
+            <input type="submit" class="btn" value="创  建">
           </form>
         </div><!-- big group end -->
       </div><!-- right part end -->
@@ -39,26 +39,6 @@
     <?php
     include("/view/common/footer.html");
     ?>
-  <script>
-    function btnSubmit(btn, url) {
-      console.log(url);
-      btn.innerHTML = "发布中";
-      btn.style.backgroundColor = '#676767';
-      btn.style.borderColor = '#676767';
-      $.ajax({
-        url: url,
-        type: "POST",
-        success: function (data) {
-          btn.innerHTML ="发布成功";
-          location.href = '/groups/my';
-        },
-        error : function (msg,meg) {
-          console.log(msg);
-          console.log(meg)
-        }
-      });
 
-    }
-  </script>
   </body>
 </html>

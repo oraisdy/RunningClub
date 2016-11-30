@@ -6,9 +6,8 @@
  * Time: 14:28
  */
 
-$EventId = $DB -> save('insert into follow_relation(userId, followingId, updatedAt) VALUES(?,?,?);
-        ', array(
-    $CurUserID,
-    $_POST['id'],
-    $CurDate,
-));
+
+require "/service/relationship.php";
+
+$RelationId = saveRelationship($DB, $CurUserID, $_POST['id'], $CurDate);
+saveMessage($DB, $CurUserID, $_POST['id'], $RelationId, "关注", $CurDate);

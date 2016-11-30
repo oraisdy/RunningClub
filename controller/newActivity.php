@@ -6,11 +6,13 @@
  * Time: 22:41
  */
 
+require "/service/activity.php";
+
 include LanguagePath.'/newActivity.php';
 
-$State="创  建";
+//$State="发布";
 if($_SERVER['REQUEST_METHOD']=='POST') {
-    $State="发布中";
+//    $State="发布中";
     $EventId = $DB -> save('insert into event(title,type,location,description,startAt,endAt,sponsorId) VALUES(?,?,?,?,?,?,?);
         ', array(
         $_POST['title'],
@@ -22,16 +24,12 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
         $CurUserID
     ));
 
-    if($_POST['ifJoin']) {
-        $JoinResult = $DB->query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)', array(
-            $CurUserID,
-            $EventId,
-            $CurDate,
-        ));
-        $DB -> query('update `event` set participateCount=event.participateCount+1 WHERE id=:id;', array(
-            'id' => $EventId
-        ));
+    if(array_key_exists('ifJoin',$_POST)) {
+        joinActivity($DB, $CurUserID, $EventId, $CurDate);
     }
-}
 
-include("/view/newActivity.php");
+    header('location: /activities/submit');
+}
+else {
+    include("/view/newActivity.php");
+}

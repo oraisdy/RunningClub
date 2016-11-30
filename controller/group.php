@@ -1,15 +1,10 @@
 <?php
 
+require "/service/group.php";
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //join group
-    $InsertResult = $DB -> save('insert into group_member(userId, groupId, joinAt) values(?,?,?)',array(
-        $CurUserID,
-        $_POST['id'],
-        $CurDate,
-    ));
-    $DB -> query('update `group` set memberCount=memberCount+1 WHERE id=:id;', array(
-        'id' => $_POST['id']
-    ));
+    joinGroup($DB, $CurUserID, $_POST['id'], $CurDate);
 }
 
 elseif($_SERVER['REQUEST_METHOD'] == 'GET') {

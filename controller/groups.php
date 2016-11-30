@@ -1,14 +1,10 @@
 <?php
 
 include LanguagePath.'/groups.php';
+require "/service/group.php";
 
 if($_GET["action"] == 'my') {
-    $Groups = $DB->query('select * from `group` where id IN (?);',
-        $DB->column('select groupId from group_member where userId = :userId', array(
-            "userId" => $CurUserID,
-        ))
-    );
-
+    $Groups = getGroups($DB, $CurUserID);
 
 } elseif ($_GET['action'] == 'all') {
     $Groups = $DB->query('select * from `group`;');

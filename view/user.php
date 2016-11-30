@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>运动 - <?php echo $User['login'];?></title>
     <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="../static/css/font-awesome.css">
@@ -21,6 +21,9 @@
         <img class="avatar" src=<?php echo $User['avatar_url'];?> alt="" style="width:200px; height:200px"/>
         <h4 class="nickname"><?php echo $User['login'];?></h4>
         <p>
+          <?php echo $User['description'];?>
+        </p>
+        <p>
           已运动 <?php echo $Record['days'];?> 天
         </p>
         <p>
@@ -30,11 +33,11 @@
           共燃烧 <?php echo $Record['calories'];?> 大卡
         </p>
         <?php if(!$IsMe && !$IsFollowing) {?>
-        <button class="btn" onclick="buttonSubmit(this,'/user/follow','已关注');" title="关注">关 注</button>
+        <button class="btn" onclick="buttonSubmit(this,id,'/user/follow','已关注');" title="关注">关 注</button>
         <?php } elseif($IsFollowing && !$IsFriend) {?>
-            <button class="btn inactive" onclick="buttonSubmit(this,'','');" title="取消关注">已关注</button>
+            <button class="btn inactive" onclick="buttonSubmit(this,id,'','');" title="取消关注">已关注</button>
         <?php } elseif($IsFriend) { ?>
-              <button class="btn inactive" onclick="buttonSubmit(this,'','');" title="取消关注">相互关注</button>
+              <button class="btn inactive" onclick="buttonSubmit(this,id,'','');" title="取消关注">相互关注</button>
         <?php } ?>
 
         <!-- group big start -->

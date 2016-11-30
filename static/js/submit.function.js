@@ -1,4 +1,4 @@
-function buttonSubmit(btn, url, newText) {
+function buttonSubmit(btn,id, url, newText) {
     // console.log(url);
     $.ajax({
         url: url,

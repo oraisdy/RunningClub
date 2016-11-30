@@ -1,20 +1,15 @@
 <?php
 
+
+require "/service/activity.php";
+
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    //join activity
-    $InsertResult = $DB -> query('insert into event_participant(userId, eventId, joinAt) values(?,?,?)',array(
-         $CurUserID,
-        $_POST['id'],
-        $CurDate,
-    ));
-    $DB -> query('update `event` set participateCount=event.participateCount+1 WHERE id=:id;', array(
-        'id' => $_POST['id']
-    ));
+    joinActivity($DB, $CurUserID, $_POST['id'], $CurDate);
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $ID   = intval($_GET['id']);
-    $Activity = $DB -> row('select * from event where id = :id;',array('id'=>$ID));
+    $Activity = $DB -> row('select * from event where id = :id and deletedAt is NULL;',array('id'=>$ID));
 
     $Sponsor = $DB -> row('select * from user where id= :id;',array('id'=>$Activity['sponsorId']));
 

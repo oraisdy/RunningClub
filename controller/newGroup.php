@@ -6,6 +6,7 @@
  * Time: 22:42
  */
 
+require "/service/group.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $GroupId = $DB->save('insert into `group`(name,description,creatorId,updatedAt) values(?,?,?,?);',
@@ -13,11 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST['description'],
             $CurUserID,
             $CurDate));
-    $InsertResult = $DB -> save('insert into group_member(userId, groupId, joinAt) values(?,?,?)',array(
-        $CurUserID,
-        $GroupId,
-        $CurDate,
-    ));
+    joinGroup($DB, $CurUserID, $GroupId, $CurDate);
+
+    header('location: /groups/my');
 }
 
 include("/view/newGroup.php");

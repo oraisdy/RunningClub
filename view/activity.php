@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>活动 - <?php echo $Activity['title'];?></title>
+    <meta name="description" content="<?php echo $Activity['description'];?>">
     <link rel="stylesheet" href="/static/css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="/static/css/font-awesome.css">
     <link rel="stylesheet" href="/static/css/master.css" media="screen" title="no title">
     <link rel="stylesheet" href="/static/css/activity.css" media="screen" title="no title">
     <script type="text/javascript" src="../static/js/jquery.js"></script>
     <script type="text/javascript" src="../static/js/submit.function.js"></script>
-<!--    <script type="text/javascript" src="../static/js/library/echarts.js"></script>-->
     <script type="text/javascript">var id = <?php echo $Activity['id']?>;</script>
   </head>
   <body>
@@ -48,14 +48,16 @@
             <hr style="margin-right:0;">
             <li><div class="btn_container">
               <?php if (!$IsParticipate) { ?>
-                <a class='btn active' href="#" onclick="buttonSubmit(this, '/activity/join', '报名成功');">我要报名</a>
+                <a class='btn active' href="#" onclick="buttonSubmit(this,id, '/activity/join', '报名成功');">我要报名</a>
               <?php } else { ?>
-                <a class='btn inactive' href="#" onclick="buttonSubmit(this, '', '我要报名');">报名成功</a>
+                <a class='btn inactive' href="#" onclick="buttonSubmit(this,id, '', '我要报名');">报名成功</a>
               <?php } ?>
             </div>
               <div class="btn_container">
-                <a class='btn' href="#" onclick="buttonSubmit(this, '报名成功');">邀请好友</a>
-              </div></li>
+                <a id='btnInvite' class='btn' href="#" onclick="showFriends();">邀请好友</a>
+              </div>
+            </li>
+            <li id="inviteFriends"></li>
           </ul>
         </li>
       </ul>
@@ -70,7 +72,38 @@
     </section>
     <?php include("/view/common/footer.html");?>
 
-    <!-- ECharts单文件引入 -->
+
+    <script>
+
+      function inviteSomebody(btn, inviteId) {
+        // console.log(url);
+        $.ajax({
+          url: "/activity/invite",
+          data: {
+            eventId: id,
+            friendId:inviteId
+          },
+          type: "POST",
+          success: function (data) {
+//            $('#btnInvite').innerHTML = '邀请成功';
+//            $('#btnInvite').setStyle('backgroundColor','#676767');
+//            $('#btnInvite').setStyle('borderColor', '#676767');
+            console.log(data);
+            alert('邀请成功');
+          },
+          error : function (msg,meg) {
+            console.log(msg);
+            console.log(meg);
+          }
+        });
+
+      }
+
+      function showFriends() {
+        $('#inviteFriends').load("/activity/invite");
+        $('#inviteFriends').show();
+      }
+    </script>
     <script src="/static/js/library/build/dist/echarts.js"></script>
     <script type="text/javascript">
       // 路径配置

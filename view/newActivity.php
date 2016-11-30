@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>活动 - 创建活动</title>
     <!-- Include Required Prerequisites -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -31,6 +31,7 @@
           <li><a href="/activities/my">我参与的活动</a></li>
           <li><a href="/activities/ongoing">进行中的活动</a></li>
           <li><a href="/activities/due">结束的活动</a></li>
+          <li><a href="/activities/submit">我发布的活动</a></li>
           <li><a href="/activities/new">创建活动</a></li>
         </ul>
       </div>
@@ -38,15 +39,15 @@
         <div class="group-big">
           <h4>创建活动</h4>
           <div class="form_container">
-            <form class="">
+            <form id="form" action='/activity/new' method="POST">
               <div><label>活动名称：</label><input class="field" type="text" name="title" value="" placeholder=""></div>
               <div><label>活动类型：</label>线上<input type="radio" checked="checked" name="type" value="线上" />
                 线下<input type="radio" name="type" value="线下" ></div>
-              <div><label>活动地点：</label><input class="field" type="text" name="location" value="" placeholder=""></div>
+              <div><label>活动地点：</label><input class="field" type="text" name="location" value="全国" placeholder="全国"></div>
               <div><label>活动时间：</label><input class="field" type="text" name="daterange"/></div>
               <div><label>活动描述：</label><textarea type="text" name="description" value="" placeholder=""></textarea></div>
               <div style="margin-left: 150px;"><input class="checkbox" checked type="checkbox" name="ifJoin">同时加入活动</div>
-              <input type="submit" class="btn" onclick="btnSubmit(this,'/activity/new');" value="发  布">
+              <input id="btnSubmit" type="submit" class="btn" value="发  布">
 <!--              <input type="submit" class="btn" value="创  建" onclick="buttonSubmit(this,'/activity/new','创建成功');">-->
             </form>
           </div>
@@ -57,27 +58,8 @@
 
     <script>
 
-      function btnSubmit(btn, url) {
-        console.log(url);
-        btn.innerHTML = "发布中";
-        btn.style.backgroundColor = '#676767';
-        btn.style.borderColor = '#676767';
-        $.ajax({
-          url: url,
-          type: "POST",
-          success: function (data) {
-            btn.innerHTML ="发布成功";
-            location.href = '/activities/my';
-          },
-          error : function (msg,meg) {
-            console.log(msg);
-            console.log(meg)
-          }
-        });
+      $(function(){
 
-      }
-
-      $(function () {
         $('input[name="daterange"]').daterangepicker({
           timePicker: true,
           timePickerIncrement: 30,
@@ -91,6 +73,8 @@
           endDate: '<?php echo $CurDate;?>',
         });
       });
+
+
 
 
 

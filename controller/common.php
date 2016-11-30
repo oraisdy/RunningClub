@@ -6,6 +6,9 @@
  * Time: 13:48
  */
 
+
+require "/service/message.php";
+
 date_default_timezone_set('PRC');
 $TimeStamp = $_SERVER['REQUEST_TIME'];
 $CurDate = date('Y-m-d H:i:s', $TimeStamp);
@@ -19,6 +22,10 @@ $DB = new DB();
 
 $CurUserID             = intval(GetCookie('UserID'));
 $CurUserName             = GetCookie('UserName');
+
+//个人消息
+$Messages = showMessages($DB,$CurUserID);
+//$Messages = $Messages==null?array():$Messages;
 
 //批量设置Cookie
 function SetCookies($CookiesArray, $Expires = 0)

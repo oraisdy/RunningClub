@@ -112,6 +112,10 @@
   margin-left: 3px;
 }
 
+.main .group-big small a{
+  color: #999;
+}
+
 .main .group-middle {
   /*width: 100%;*/
   display: block;

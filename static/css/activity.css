@@ -125,5 +125,6 @@ li .btn_container {
   width: 60px;
   height: 60px;
   display: inline-block;
+  cursor: pointer;
   vertical-align: top;
 }

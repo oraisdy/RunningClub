@@ -2,11 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>小组 - <?php echo $Lang['Title']; ?></title>
   <link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">
   <link rel="stylesheet" href="../static/css/font-awesome.css">
   <link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">
-  <link rel="stylesheet" href="../static/css/activities.css" media="screen" title="no title">
+  <link rel="stylesheet" href="../static/css/groups.css" media="screen" title="no title">
 </head>
 <body>
 <?php include("/view/common/header.php");?>
@@ -45,6 +45,7 @@
   </div><!-- right part end -->
 </div>
 </body>
+<?php include("/view/common/footer.html");?>
 </html>
 
 
