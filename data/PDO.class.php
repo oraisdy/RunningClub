@@ -12,7 +12,7 @@ class DB {
     public $queryCount = 0;
 
     public function __construct() {
-        $this->file_db = new PDO('sqlite:rnclub.db');
+        $this->file_db = new PDO('sqlite:./rnclub.db');
     }
 
 

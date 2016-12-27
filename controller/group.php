@@ -1,6 +1,6 @@
 <?php
 
-require "/service/group.php";
+require "./service/group.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //join group
@@ -32,5 +32,5 @@ elseif($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 }
 
-include("/view/group.php");
+include("./view/group.php");
 

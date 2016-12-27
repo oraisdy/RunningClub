@@ -6,14 +6,14 @@
  * Time: 23:50
  */
 
-require "/service/relationship.php";
+require "./service/relationship.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     //show friends list
     $Friends = (getFriends($DB,$CurUserID));
 
 //    echo '<br><br><br><br><br>'.$Friends;
-    include("/view/friends.php");
+    include("./view/friends.php");
 
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 

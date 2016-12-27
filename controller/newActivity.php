@@ -6,7 +6,7 @@
  * Time: 22:41
  */
 
-require "/service/activity.php";
+require "./service/activity.php";
 
 include LanguagePath.'/newActivity.php';
 
@@ -31,5 +31,5 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
     header('location: /activities/submit');
 }
 else {
-    include("/view/newActivity.php");
+    include("./view/newActivity.php");
 }

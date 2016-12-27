@@ -6,7 +6,7 @@
  * Time: 22:42
  */
 
-require "/service/group.php";
+require "./service/group.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $GroupId = $DB->save('insert into `group`(name,description,creatorId,updatedAt) values(?,?,?,?);',
@@ -19,4 +19,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('location: /groups/my');
 }
 
-include("/view/newGroup.php");
+include("./view/newGroup.php");

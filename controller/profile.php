@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 } elseif($_GET['action'] == 'modify') {
 
-    include("/view/profile.php");
+    include("./view/profile.php");
 
 } elseif ($_GET['action'] == 'presentation') {
-    include("/view/presentation.php");
+    include("./view/presentation.php");
 }
 
