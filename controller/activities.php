@@ -1,7 +1,7 @@
 <?php
 
 include LanguagePath.'/activities.php';
-require "/service/activity.php";
+require "./service/activity.php";
 
 
 $IsSponsor = false;
@@ -48,4 +48,4 @@ $Lang['Title'] = $Lang['Title_'.$_GET['action']];
 //$ActivitiesCount = count($Activities);
 
 
-include("/view/activities.php");
+include("./view/activities.php");

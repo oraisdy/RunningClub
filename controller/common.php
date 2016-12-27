@@ -7,17 +7,17 @@
  */
 
 
-require "/service/message.php";
+require "./service/message.php";
 
 date_default_timezone_set('PRC');
 $TimeStamp = $_SERVER['REQUEST_TIME'];
 $CurDate = date('Y-m-d H:i:s', $TimeStamp);
 
 //读入config
-include('/config/config.php');
+include('./config/config.php');
 
 //打开数据库连接
-require("/data/PDO.class.php");
+require("./data/PDO.class.php");
 $DB = new DB();
 
 $CurUserID             = intval(GetCookie('UserID'));

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>活动 - 创建活动</title>
+
     <!-- Include Required Prerequisites -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -39,7 +40,7 @@
         <div class="group-big">
           <h4>创建活动</h4>
           <div class="form_container">
-            <form id="form" action='/activity/new' method="POST">
+            <form id="form">
               <div><label>活动名称：</label><input class="field" type="text" name="title" value="" placeholder=""></div>
               <div><label>活动类型：</label>线上<input type="radio" checked="checked" name="type" value="线上" />
                 线下<input type="radio" name="type" value="线下" ></div>
@@ -47,7 +48,7 @@
               <div><label>活动时间：</label><input class="field" type="text" name="daterange"/></div>
               <div><label>活动描述：</label><textarea type="text" name="description" value="" placeholder=""></textarea></div>
               <div style="margin-left: 150px;"><input class="checkbox" checked type="checkbox" name="ifJoin">同时加入活动</div>
-              <input id="btnSubmit" type="submit" class="btn" value="发  布">
+              <input id="btnSubmit" type="button " onclick="submitBtn(this);" class="btn" value="发  布">
 <!--              <input type="submit" class="btn" value="创  建" onclick="buttonSubmit(this,'/activity/new','创建成功');">-->
             </form>
           </div>
@@ -55,8 +56,28 @@
     </div>
     <?php include("/view/common/footer.html");?>
 
-
+      <script>
+        function submitBtn(btn) {
+          console.log('hello');
+          $.ajax({
+            data:$('#form').serialize(),
+            type:'POST',
+            url:'/activity/new',
+            success:function (data) {
+              console.log(data);
+              console.log(btn);
+              btn.value = '发布成功';
+            },
+            error:function (msg,meg) {
+              console.log(msg);
+              console.log(meg);
+            }
+          });
+        }
+      </script>
     <script>
+
+
 
       $(function(){
 

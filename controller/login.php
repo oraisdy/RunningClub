@@ -52,5 +52,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //$DB->CloseConnection();
 
 
-include("/view/login.html");
+include("./view/login.html");
 

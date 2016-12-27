@@ -11,4 +11,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 
-include("/view/register.html");
+include("./view/register.html");

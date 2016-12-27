@@ -1,7 +1,7 @@
 <?php
 
 
-require "/service/activity.php";
+require "./service/activity.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     joinActivity($DB, $CurUserID, $_POST['id'], $CurDate);
@@ -45,6 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 }
 
-include("/view/activity.php");
+include("./view/activity.php");
 
 //echo $Activity['startAt']." ".$Activity['endAt']." ".json_encode($Rank);

@@ -1,8 +1,8 @@
 <?php
 
-require "/service/relationship.php";
-require "/service/activity.php";
-require "/service/group.php";
+require "./service/relationship.php";
+require "./service/activity.php";
+require "./service/group.php";
 
 $id = intval($_GET['id']);
 $User = $DB -> row('select * from user where id=:id;',array("id"=>$id));
@@ -32,4 +32,4 @@ $Activities = getActivities($DB, $id);
 
 $Friends = getFriends($DB,$id);
 
-include("/view/user.php");
+include("./view/user.php");

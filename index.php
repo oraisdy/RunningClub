@@ -1,6 +1,6 @@
 <?php
 
-require('/controller/common.php');
+require('./controller/common.php');
 
 $HTTPMethod = $_SERVER['REQUEST_METHOD'];
 if (!in_array($HTTPMethod, array('GET', 'POST', 'HEAD', 'PUT', 'DELETE', 'OPTIONS'))) {
