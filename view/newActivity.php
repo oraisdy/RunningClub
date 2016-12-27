@@ -21,7 +21,7 @@
 
   </head>
   <body>
-    <?php include("/view/common/header.php");?>
+    <?php include("./view/common/header.php");?>
     <div class="main">
       <div class="banner">
       </div>
@@ -54,7 +54,7 @@
           </div>
       </div>
     </div>
-    <?php include("/view/common/footer.html");?>
+    <?php include("./view/common/footer.html");?>
 
       <script>
         function submitBtn(btn) {

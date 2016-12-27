@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../static/js/jquery.js"></script>
   </head>
   <body>
-    <?php include("/view/common/header.php");?>
+    <?php include("./view/common/header.php");?>
     <div class="main">
       <div class="banner">
       </div>
@@ -37,7 +37,7 @@
       </div><!-- right part end -->
     </div>
     <?php
-    include("/view/common/footer.html");
+    include("./view/common/footer.html");
     ?>
 
   </body>

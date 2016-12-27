@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../static/js/submit.function.js"></script>
   </head>
   <body>
-    <?php include("/view/common/header.php");?>
+    <?php include("./view/common/header.php");?>
     <div class="main">
       <div class="banner">
       </div>
@@ -66,6 +66,6 @@
 
       </div>
     </div>
-    <?php include("/view/common/footer.html");?>
+    <?php include("./view/common/footer.html");?>
   </body>
 </html>

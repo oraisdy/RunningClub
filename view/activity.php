@@ -13,7 +13,7 @@
     <script type="text/javascript">var id = <?php echo $Activity['id']?>;</script>
   </head>
   <body>
-    <?php include("/view/common/header.php");?>
+    <?php include("./view/common/header.php");?>
     <section class="main">
       <ul class="detail_container">
         <li class="image_presentation">
@@ -70,7 +70,7 @@
       <h4>参与者排名</h4>
       <div id="chart" style="width: 1080px;height:400px; overflow: auto;"></div>
     </section>
-    <?php include("/view/common/footer.html");?>
+    <?php include("./view/common/footer.html");?>
 
 
     <script>

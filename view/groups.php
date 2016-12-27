@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../static/css/groups.css" media="screen" title="no title">
 </head>
 <body>
-<?php include("/view/common/header.php");?>
+<?php include("./view/common/header.php");?>
 <div class="main">
   <div class="banner">
   </div>
@@ -45,7 +45,7 @@
   </div><!-- right part end -->
 </div>
 </body>
-<?php include("/view/common/footer.html");?>
+<?php include("./view/common/footer.html");?>
 </html>
 
 
