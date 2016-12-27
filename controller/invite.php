@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $Friends = (getFriends($DB,$CurUserID));
 
 //    echo '<br><br><br><br><br>'.$Friends;
-    include("/view/friends.php");
+    include("./view/friends.php");
 
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
