@@ -55,25 +55,25 @@
               <th class="last">最后回应</th>
             </tr>
             <tr>
-              <td class="title"><a href="./view/topic.html">ddl推迟了</a></td>
+              <td class="title"><a href="/t/1">ddl推迟了</a></td>
               <td class="author"><a href="/user">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-20 10:48:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="./view/topic.html">早起打卡</a></td>
+              <td class="title"><a href="/t/1">早起打卡</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-25 06:15:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="./view/topic.html">ddl推迟了</a></td>
+              <td class="title"><a href="/t/1">ddl推迟了</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-20 10:48:04</td>
             </tr>
             <tr>
-              <td class="title"><a href="./view/topic.html">早起打卡</a></td>
+              <td class="title"><a href="/t/1">早起打卡</a></td>
               <td class="author"><a href="user.php">Dora</a></td>
               <td clsss="reply">1</td>
               <td class="last">2016-10-25 06:15:04</td>
