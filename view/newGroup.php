@@ -37,7 +37,7 @@
       </div><!-- right part end -->
     </div>
     <?php
-    include("./view/common/footer.html");
+    include("./view/common/footer.php");
     ?>
 
   </body>

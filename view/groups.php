@@ -45,7 +45,7 @@
   </div><!-- right part end -->
 </div>
 </body>
-<?php include("./view/common/footer.html");?>
+<?php include("./view/common/footer.php");?>
 </html>
 
 

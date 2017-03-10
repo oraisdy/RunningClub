@@ -113,7 +113,7 @@
       </div>
     </div>
     </div>
-    <?php include("common/footer.html"); ?>
+    <?php include("common/footer.php"); ?>
 
     <script>
       var myChart = echarts.init(document.getElementById('chart'));

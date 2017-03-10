@@ -66,6 +66,6 @@
 
       </div>
     </div>
-    <?php include("./view/common/footer.html");?>
+    <?php include("./view/common/footer.php");?>
   </body>
 </html>

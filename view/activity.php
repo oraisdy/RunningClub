@@ -70,7 +70,7 @@
       <h4>参与者排名</h4>
       <div id="chart" style="width: 1080px;height:400px; overflow: auto;"></div>
     </section>
-    <?php include("./view/common/footer.html");?>
+    <?php include("./view/common/footer.php");?>
 
 
     <script>

@@ -22,6 +22,7 @@ $DB = new DB();
 
 $CurUserID             = intval(GetCookie('UserID'));
 $CurUserName             = GetCookie('UserName');
+$CurUser                 = $DB -> row('select * from user where id=:id;',array("id"=>$CurUserID));
 
 //个人消息
 $Messages = showMessages($DB,$CurUserID);

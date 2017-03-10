@@ -54,7 +54,7 @@
           </div>
       </div>
     </div>
-    <?php include("./view/common/footer.html");?>
+    <?php include("./view/common/footer.php");?>
 
       <script>
         function submitBtn(btn) {
