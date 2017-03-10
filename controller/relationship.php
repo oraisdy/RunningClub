@@ -10,4 +10,4 @@
 require "./service/relationship.php";
 
 $RelationId = saveRelationship($DB, $CurUserID, $_POST['id'], $CurDate);
-saveMessage($DB, $CurUserID, $_POST['id'], $RelationId, "关注", $CurDate);
+//saveMessage($DB, $CurUserID, $_POST['id'], $RelationId, "关注", $CurDate);

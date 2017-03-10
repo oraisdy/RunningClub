@@ -14,19 +14,8 @@
   <!-- Full Width Column -->
   <div class="content-wrapper">
     <div class="container">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>
-          Top Navigation
-          <small>Example 2.0</small>
-        </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Layout</a></li>
-          <li class="active">Top Navigation</li>
-        </ol>
-      </section>
 
+      <?php include("./view/common/content_header.php");?>
       <!-- Main content -->
       <section class="content">
 
@@ -56,20 +45,3 @@
 </html>
 
 
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-  <!--<head>-->
-    <!--<meta charset="utf-8">-->
-    <!--<title></title>-->
-    <!--<link rel="stylesheet" href="../static/css/style.css" media="screen" title="no title">-->
-    <!--<link rel="stylesheet" href="../static/css/font-awesome.css">-->
-    <!--<link rel="stylesheet" href="../static/css/master.css" media="screen" title="no title">-->
-    <!--<link rel="stylesheet" href="../static/css/index.css" media="screen" title="no title">-->
-  <!--</head>-->
-  <!--<body>-->
-    <!--<div class="main">-->
-      <!--<div class="photo">-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</body>-->
-<!--</html>-->
