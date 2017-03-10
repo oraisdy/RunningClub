@@ -1,16 +1,13 @@
-function buttonSubmit() {
-    
-    for (var i = 0;i<3;i++) {
-    	console.log(url);
-    	$.ajax({
+function buttonSubmit(btn,id, url, newText) {
+    // console.log(url);
+    $.ajax({
         url: url,
-        // data: {
-        //     id: id,
-        // },
-      	
+        data: {
+            id: id,
+        },
+        // cache: false,
         // dataType: "json",
         type: "POST",
-        async :false,
         success: function (data) {
             btn.innerHTML = newText;
             btn.style.backgroundColor = '#676767';
@@ -18,9 +15,9 @@ function buttonSubmit() {
             console.log(data);
         },
         error : function (msg,meg) {
-            console.log("error"+msg+" "+meg);
+            console.log(msg);
+            console.log(meg)
         }
     });
-    }
 
 }
