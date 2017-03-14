@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="./static/css/style.css" media="screen" title="no title">
+    <link rel="stylesheet" href="./static/css/login.css" media="screen" title="no title">
+    <link rel="stylesheet" href="./static/css/font-awesome.css">
+  </head>
+  <body>
+    <h2 class="title">RUNNING CLUB</h2>
+    <div class="main">
+      <div class="left">
+        <form class="" action="/login" method="post">
+          <input type="email" name="email" value="" placeholder="电子邮件">
+          <input type="password" name="password" value="" placeholder="密码">
+          <input id="login" class="btn" type="submit" value="登   录">
+        </form>
+      </div>
+      <div class="horizontal_divider"></div>
+      <div class="right">
+        <a id="register" class="btn" href="/register">创建账号</a>
+      </div>
+    </div>
+  <?php include("./view/common/footer.html"); ?>
+  </body>
+</html>
